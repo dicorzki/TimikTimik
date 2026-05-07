@@ -72,18 +72,7 @@ if (!_rpUser) {
   userInfo.style.cssText = 'font-size:12px;color:var(--text3);white-space:nowrap;';
   userInfo.innerHTML = `Halo, <span style="color:var(--text);font-weight:600;">${_rpUser.username}</span>`;
 
-  // Logout btn
-  const logoutBtn = document.createElement('button');
-  logoutBtn.textContent = 'Logout';
-  logoutBtn.style.cssText = `
-    background:rgba(255,0,0,0.08);color:#e06060;
-    border:1px solid rgba(255,0,0,0.2);
-    padding:5px 10px;border-radius:8px;
-    cursor:pointer;font-size:11px;font-weight:600;
-    font-family:'Inter',sans-serif;
-  `;
-  logoutBtn.onclick = () => { clearSession(); window.location.href = 'auth.html'; };
-
+ 
   // Insert sebelum elemen pertama header-right (btn-theme)
   const firstChild = headerRight.firstChild;
   headerRight.insertBefore(backBtn, firstChild);
