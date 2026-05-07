@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RunPlan — Masuk</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏃</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#111110">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --accent: #E84B00;
+            --accent2: #FF6B35;
+            --bg: #111110;
+            --bg2: #1A1A18;
+            --bg3: #242422;
+            --border: rgba(255,255,255,0.08);
+            --border2: rgba(255,255,255,0.14);
+            --text: #F0EFEA;
+            --text2: #A0A098;
+            --text3: #606058;
+            --green: #2D7A2D;
+            --red: #C0392B;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .auth-wrap {
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .auth-logo .logo-mark {
+            width: 52px; height: 52px;
+            background: var(--accent);
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 20px rgba(232,75,0,0.35);
+        }
+
+        .auth-logo h1 {
+            font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 900;
+            font-size: 28px;
+            letter-spacing: -0.5px;
+            color: var(--text);
+        }
+
+        .auth-logo h1 span { color: var(--accent); }
+
+        .auth-logo p {
+            font-size: 12px;
+            color: var(--text3);
+            margin-top: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .auth-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 28px 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .auth-tabs {
+            display: flex;
+            gap: 2px;
+            background: var(--bg3);
+            border-radius: 10px;
+            padding: 3px;
+            margin-bottom: 24px;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            border-radius: 8px;
+            background: transparent;
+            color: var(--text3);
+            font-size: 13px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .auth-tab.active {
+            background: var(--bg2);
+            color: var(--text);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+        }
+
+        .field {
+            margin-bottom: 16px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text3);
+            margin-bottom: 7px;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg3);
+            border: 1.5px solid var(--border2);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.15s;
+        }
+
+        .field input:focus { border-color: var(--accent); }
+        .field input::placeholder { color: var(--text3); }
+
+        .field-hint {
+            font-size: 11px;
+            color: var(--text3);
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        .btn-auth {
+            width: 100%;
+            padding: 13px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            transition: all 0.15s;
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-auth:hover { background: var(--accent2); transform: translateY(-1px); }
+        .btn-auth:active { transform: translateY(0); }
+        .btn-auth:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+        .alert {
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .alert.show { display: block; }
+        .alert.error { background: rgba(192,57,43,0.12); border: 1px solid rgba(192,57,43,0.3); color: #e07060; }
+        .alert.success { background: rgba(45,122,45,0.12); border: 1px solid rgba(45,122,45,0.3); color: #6abf6a; }
+
+        .spinner {
+            width: 16px; height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 11px;
+            color: var(--text3);
+        }
+
+        .auth-footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap">
+</head>
+<body>
+
+<div class="auth-wrap">
+    <div class="auth-logo">
+        <div class="logo-mark">🏃</div>
+        <h1>Run<span>Plan</span></h1>
+        <p>#GrowthEveryday · by Dico</p>
+    </div>
+
+    <div class="auth-card">
+        <div class="auth-tabs">
+            <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Masuk</button>
+            <button class="auth-tab" id="tab-signup" onclick="switchTab('signup')">Daftar</button>
+        </div>
+
+        <div id="alert-box" class="alert"></div>
+
+        <div class="field">
+            <label>Username</label>
+            <input type="text" id="username" placeholder="username kamu..." autocomplete="username" autocapitalize="none" spellcheck="false">
+        </div>
+
+        <div class="field">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+            <div class="field-hint" id="pw-hint" style="display:none">Minimal 6 karakter</div>
+        </div>
+
+        <button class="btn-auth" id="btn-submit" onclick="handleSubmit()">
+            <div class="spinner" id="spinner"></div>
+            <span id="btn-label">Masuk Sekarang</span>
+        </button>
+    </div>
+
+    <div class="auth-footer">
+        RunPlan · Gratis · Bahasa Indonesia ·
+        <a href="https://instagram.com/dicorzki" target="_blank" rel="noopener">@dicorzki</a>
+    </div>
+</div>
+
+<script type="module">
+import { supabase, hashPassword, saveSession, getSession } from './supabase_config.js';
+
+// Kalau sudah login, langsung redirect
+if (getSession()) {
+    window.location.href = 'index.html';
+}
+
+let currentMode = 'login';
+
+window.switchTab = function(mode) {
+    currentMode = mode;
+    document.getElementById('tab-login').classList.toggle('active', mode === 'login');
+    document.getElementById('tab-signup').classList.toggle('active', mode === 'signup');
+    document.getElementById('btn-label').textContent = mode === 'login' ? 'Masuk Sekarang' : 'Buat Akun';
+    document.getElementById('pw-hint').style.display = mode === 'signup' ? 'block' : 'none';
+    hideAlert();
+};
+
+window.handleSubmit = async function() {
+    const username = document.getElementById('username').value.trim().toLowerCase();
+    const password = document.getElementById('password').value;
+
+    if (!username || !password) {
+        showAlert('error', 'Username dan password wajib diisi!');
+        return;
+    }
+
+    if (currentMode === 'signup' && password.length < 6) {
+        showAlert('error', 'Password minimal 6 karakter ya!');
+        return;
+    }
+
+    // Validasi username: hanya huruf, angka, underscore
+    if (!/^[a-z0-9_]+$/.test(username)) {
+        showAlert('error', 'Username hanya boleh huruf kecil, angka, dan underscore (_)');
+        return;
+    }
+
+    setLoading(true);
+
+    try {
+        const passwordHash = await hashPassword(password);
+
+        if (currentMode === 'signup') {
+            // Cek username sudah ada atau belum
+            const { data: existing } = await supabase
+                .from('users')
+                .select('id')
+                .eq('username', username)
+                .maybeSingle();
+
+            if (existing) {
+                showAlert('error', `Username "${username}" sudah dipakai, coba nama lain!`);
+                return;
+            }
+
+            // Buat akun baru
+            const { data: newUser, error } = await supabase
+                .from('users')
+                .insert({ username, password: passwordHash })
+                .select('id, username')
+                .single();
+
+            if (error) throw error;
+
+            showAlert('success', 'Akun berhasil dibuat! Langsung masuk...');
+            saveSession(newUser);
+            setTimeout(() => { window.location.href = 'index.html'; }, 1000);
+
+        } else {
+            // Login — cari user dengan username + password hash
+            const { data: user, error } = await supabase
+                .from('users')
+                .select('id, username')
+                .eq('username', username)
+                .eq('password', passwordHash)
+                .maybeSingle();
+
+            if (error) throw error;
+
+            if (!user) {
+                showAlert('error', 'Username atau password salah!');
+                return;
+            }
+
+            saveSession(user);
+            window.location.href = 'index.html';
+        }
+    } catch (err) {
+        console.error(err);
+        showAlert('error', 'Terjadi error: ' + (err.message || 'Coba lagi ya!'));
+    } finally {
+        setLoading(false);
+    }
+};
+
+// Enter key support
+document.addEventListener('keydown', e => {
+    if (e.key === 'Enter') window.handleSubmit();
+});
+
+function setLoading(on) {
+    document.getElementById('btn-submit').disabled = on;
+    document.getElementById('spinner').style.display = on ? 'block' : 'none';
+    document.getElementById('btn-label').textContent = on ? '' : (currentMode === 'login' ? 'Masuk Sekarang' : 'Buat Akun');
+}
+
+function showAlert(type, msg) {
+    const el = document.getElementById('alert-box');
+    el.className = `alert ${type} show`;
+    el.textContent = msg;
+}
+
+function hideAlert() {
+    document.getElementById('alert-box').classList.remove('show');
+}
+</script>
+</body>
+</html>

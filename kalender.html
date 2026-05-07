@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Race Calendar 2026 — Indonesia</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --cream: #F5F0EB;
+                --dark: #0A0A08;
+                --green: #1B4D3E;
+                --green-light: #2D6B54;
+                --orange: #E8833A;
+                --orange-light: #F4A261;
+                --gray: #8A8680;
+                --bg: #0A0A08;
+                --fg: #F5F0EB;
+                --fg-muted: rgba(245,240,235,0.55);
+                --border: rgba(245,240,235,0.1);
+                --card: rgba(245,240,235,0.04);
+                --panel-bg: rgba(245,240,235,0.03);
+                --input-bg: rgba(245,240,235,0.05);
+                --input-border: rgba(245,240,235,0.12);
+                --accent: #E8833A;
+                --accent2: #F4A261;
+                --c-green: #10B981;
+                --c-amber: #F59E0B;
+                --c-blue: #7EB8D4;
+                --c-purple: #B48CC8;
+                --c-red: #E85A30;
+            }
+
+            html[data-theme="light"] {
+                --bg: #FFFFFF;
+                --fg: #141210;
+                --fg-muted: rgba(20,18,16,0.55);
+                --border: rgba(20,18,16,0.1);
+                --card: rgba(20,18,16,0.03);
+                --panel-bg: rgba(20,18,16,0.02);
+                --input-bg: rgba(20,18,16,0.04);
+                --input-border: rgba(20,18,16,0.15);
+                --accent: #E8833A;
+                --accent2: #D4601A;
+                --c-green: #1B4D3E;
+                --c-amber: #C05621;
+                --c-blue: #2563EB;
+                --c-purple: #6D28D9;
+                --c-red: #DC2626;
+            }
+
+            html[data-theme="warm"] {
+                --bg: #F5F0EB;
+                --fg: #141210;
+                --fg-muted: rgba(20,18,16,0.55);
+                --border: rgba(20,18,16,0.1);
+                --card: rgba(20,18,16,0.04);
+                --panel-bg: rgba(20,18,16,0.025);
+                --input-bg: rgba(20,18,16,0.04);
+                --input-border: rgba(20,18,16,0.15);
+                --accent: #E8833A;
+                --accent2: #D4601A;
+                --c-green: #1B4D3E;
+                --c-amber: #C05621;
+                --c-blue: #2563EB;
+                --c-purple: #6D28D9;
+                --c-red: #DC2626;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: 'DM Sans', sans-serif;
+                background: var(--bg);
+                color: var(--fg);
+                overflow-x: hidden;
+                min-height: 100vh;
+                transition: background .2s, color .2s;
+            }
+
+            body::before {
+                content: '';
+                position: fixed;
+                inset: 0;
+                background-image: linear-gradient(rgba(232,131,58,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(232,131,58,0.03) 1px, transparent 1px);
+                background-size: 60px 60px;
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            /* ── HERO ── */
+            .hero {
+                position: relative;
+                padding: 48px 24px 32px;
+                text-align: center;
+                border-bottom: 1px solid var(--border);
+                overflow: hidden;
+                z-index: 1;
+            }
+
+            .hero-orb {
+                position: absolute;
+                top: -100px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 600px;
+                height: 400px;
+                background: radial-gradient(ellipse at 50% 40%, rgba(232,131,58,0.18) 0%, rgba(244,162,97,0.05) 40%, transparent 70%);
+                pointer-events: none;
+            }
+
+            .eyebrow {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: rgba(232,131,58,0.08);
+                border: 1px solid rgba(232,131,58,0.25);
+                border-radius: 4px;
+                padding: 5px 16px;
+                font-family: 'DM Mono',monospace;
+                font-size: 10px;
+                letter-spacing: 3px;
+                color: var(--accent);
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+
+            .eyebrow-dot {
+                width: 5px;
+                height: 5px;
+                background: var(--accent);
+                border-radius: 50%;
+                animation: blink 2s infinite;
+            }
+
+            @keyframes blink {
+                0%,100% {
+                    opacity: 1;
+                }
+
+                50% {
+                    opacity: 0.2;
+                }
+            }
+
+            .hero h1 {
+                font-family: 'Bebas Neue',sans-serif;
+                font-size: clamp(52px,13vw,110px);
+                letter-spacing: 4px;
+                line-height: 0.85;
+                color: var(--fg);
+                margin-bottom: 6px;
+            }
+
+            .hero h1 em {
+                font-style: normal;
+                color: transparent;
+                -webkit-text-stroke: 2px var(--accent);
+            }
+
+            .hero-sub {
+                font-size: 14px;
+                color: var(--fg-muted);
+                max-width: 420px;
+                margin: 16px auto 20px;
+                line-height: 1.7;
+                font-weight: 400;
+            }
+
+            .watermark {
+                font-family: 'DM Mono',monospace;
+                font-size: 10px;
+                color: var(--fg-muted);
+                letter-spacing: 2px;
+                margin-bottom: 12px;
+            }
+
+            /* ── THEME TOGGLE (sama persis RunPlan) ── */
+            .theme-toggle {
+                display: inline-flex;
+                gap: 3px;
+                padding: 3px;
+                border-radius: 100px;
+                background: var(--card);
+                border: 1px solid var(--border);
+            }
+
+            .theme-btn {
+                width: 32px;
+                height: 32px;
+                border-radius: 100px;
+                border: none;
+                cursor: pointer;
+                background: transparent;
+                font-size: 14px;
+                transition: background .15s;
+            }
+
+            .theme-btn.active {
+                background: rgba(232,131,58,.2);
+            }
+
+            .theme-btn:hover:not(.active) {
+                background: var(--card);
+            }
+
+            /* ── STATS ── */
+            .stats {
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                border-bottom: 1px solid var(--border);
+                position: relative;
+                z-index: 1;
+            }
+
+            .stat {
+                padding: 20px 16px;
+                text-align: center;
+                border-right: 1px solid var(--border);
+            }
+
+            .stat:last-child {
+                border-right: none;
+            }
+
+            .stat-n {
+                font-family: 'Bebas Neue',sans-serif;
+                font-size: 36px;
+                line-height: 1;
+                background: linear-gradient(135deg,var(--accent),var(--accent2));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .stat-l {
+                font-size: 9px;
+                color: var(--fg-muted);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-top: 4px;
+                font-family: 'DM Mono',monospace;
+            }
+
+            /* ── CONTROLS ── */
+            .controls {
+                position: sticky;
+                top: 0;
+                z-index: 50;
+                background: rgba(10,10,8,0.88);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-bottom: 1px solid var(--border);
+                padding: 14px 20px;
+                transition: background .2s;
+            }
+
+            html[data-theme="light"] .controls {
+                background: rgba(255,255,255,0.92);
+            }
+
+            html[data-theme="warm"] .controls {
+                background: rgba(245,240,235,0.92);
+            }
+
+            .controls-inner {
+                max-width: 900px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .search-wrap {
+                position: relative;
+            }
+
+            .search-icon {
+                position: absolute;
+                left: 14px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 14px;
+                opacity: 0.4;
+            }
+
+            .search-input {
+                width: 100%;
+                background: var(--input-bg);
+                border: 1px solid var(--input-border);
+                border-radius: 10px;
+                padding: 10px 14px 10px 40px;
+                color: var(--fg);
+                font-size: 13px;
+                font-family: 'DM Sans',sans-serif;
+                outline: none;
+                transition: border-color .2s;
+            }
+
+            .search-input::placeholder {
+                color: var(--fg-muted);
+            }
+
+            .search-input:focus {
+                border-color: rgba(232,131,58,0.5);
+            }
+
+            .filter-group {
+                display: flex;
+                gap: 6px;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .filter-sep {
+                width: 1px;
+                height: 16px;
+                background: var(--input-border);
+                margin: 0 4px;
+            }
+
+            .chip {
+                background: var(--input-bg);
+                border: 1px solid var(--border);
+                border-radius: 6px;
+                padding: 5px 13px;
+                font-size: 11px;
+                font-family: 'DM Mono',monospace;
+                color: var(--fg-muted);
+                cursor: pointer;
+                transition: all .15s;
+                white-space: nowrap;
+                letter-spacing: 0.5px;
+            }
+
+            .chip:hover {
+                border-color: var(--input-border);
+                color: var(--fg);
+            }
+
+            .chip.active {
+                background: var(--accent);
+                border-color: var(--accent);
+                color: #fff;
+                font-weight: 500;
+            }
+
+            .chip.trail.active {
+                background: var(--c-green);
+                border-color: var(--c-green);
+            }
+
+            .chip.road.active {
+                background: var(--c-blue);
+                border-color: var(--c-blue);
+            }
+
+            .chip.prov.active {
+                background: var(--c-purple);
+                border-color: var(--c-purple);
+            }
+
+            /* ── MAIN ── */
+            .main {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px 16px 80px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .results-bar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 16px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .results-count {
+                font-family: 'DM Mono',monospace;
+                font-size: 11px;
+                color: var(--fg-muted);
+            }
+
+            .results-count strong {
+                color: var(--accent);
+            }
+
+            .reset-btn {
+                background: rgba(232,131,58,0.08);
+                border: 1px solid rgba(232,131,58,0.2);
+                border-radius: 6px;
+                padding: 4px 12px;
+                font-size: 10px;
+                font-family: 'DM Mono',monospace;
+                color: var(--accent);
+                cursor: pointer;
+                display: none;
+                letter-spacing: 1px;
+            }
+
+            .reset-btn.show {
+                display: block;
+            }
+
+            /* ── MONTH GROUP ── */
+            .month-group {
+                margin-bottom: 8px;
+            }
+
+            .month-header {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 12px 0 8px;
+                margin-bottom: 4px;
+            }
+
+            .month-label {
+                font-family: 'Bebas Neue',sans-serif;
+                font-size: 18px;
+                letter-spacing: 3px;
+                color: var(--fg-muted);
+            }
+
+            .month-line {
+                flex: 1;
+                height: 1px;
+                background: var(--border);
+            }
+
+            .month-count {
+                font-family: 'DM Mono',monospace;
+                font-size: 9px;
+                color: var(--fg-muted);
+                background: var(--panel-bg);
+                border: 1px solid var(--border);
+                border-radius: 4px;
+                padding: 2px 8px;
+            }
+
+            /* ── RACE CARD ── */
+            .race-card {
+                background: var(--card);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 0;
+                margin-bottom: 8px;
+                overflow: hidden;
+                transition: border-color .2s,transform .2s;
+                position: relative;
+                text-align: left !important; /* INI OBATNYA COK BIAR RATA KIRI */
+            }
+
+            .race-card:hover {
+                border-color: rgba(232,131,58,0.25);
+                transform: translateY(-1px);
+            }
+
+            .card-stripe {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+            }
+
+            .road .card-stripe {
+                background: var(--c-blue);
+            }
+
+            .trail .card-stripe {
+                background: var(--c-green);
+            }
+
+            .multi .card-stripe {
+                background: var(--c-purple);
+            }
+
+            .card-inner {
+                padding: 16px 16px 16px 20px;
+            }
+
+            .card-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 8px;
+            }
+
+            .card-name {
+                font-size: 15px;
+                font-weight: 700;
+                color: var(--fg);
+                line-height: 1.3;
+                flex: 1;
+            }
+
+            .status-pill {
+                font-family: 'DM Mono',monospace;
+                font-size: 8px;
+                font-weight: 500;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                padding: 3px 10px;
+                border-radius: 4px;
+                white-space: nowrap;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .s-live {
+                background: rgba(232,90,48,0.12);
+                color: var(--c-red);
+                border: 1px solid rgba(232,90,48,0.25);
+            }
+
+            .s-upcoming {
+                background: var(--input-bg);
+                color: var(--fg-muted);
+                border: 1px solid var(--border);
+            }
+
+            .live-dot {
+                width: 5px;
+                height: 5px;
+                background: var(--c-red);
+                border-radius: 50%;
+                animation: blink 1.4s infinite;
+            }
+
+            .card-meta {
+                display: flex;
+                gap: 16px;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+            }
+
+            .meta-item {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-family: 'DM Mono',monospace;
+                font-size: 11px;
+                color: var(--fg-muted);
+            }
+
+            .card-chips {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                margin-bottom: 10px;
+            }
+
+            .chip-tag {
+                font-family: 'DM Mono',monospace;
+                font-size: 9px;
+                font-weight: 500;
+                padding: 3px 9px;
+                border-radius: 4px;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
+
+            .ct-road {
+                background: rgba(126,184,212,0.1);
+                color: var(--c-blue);
+                border: 1px solid rgba(126,184,212,0.2);
+            }
+
+            .ct-trail {
+                background: rgba(16,185,129,0.1);
+                color: var(--c-green);
+                border: 1px solid rgba(16,185,129,0.2);
+            }
+
+            .ct-multi {
+                background: rgba(180,140,200,0.1);
+                color: var(--c-purple);
+                border: 1px solid rgba(180,140,200,0.2);
+            }
+
+            .ct-fcfs {
+                background: rgba(16,185,129,0.08);
+                color: var(--c-green);
+            }
+
+            .ct-ballot {
+                background: rgba(245,158,11,0.08);
+                color: var(--c-amber);
+            }
+
+            .ct-kual {
+                background: rgba(126,184,212,0.08);
+                color: var(--c-blue);
+            }
+
+            .ct-mixed {
+                background: rgba(180,140,200,0.08);
+                color: var(--c-purple);
+            }
+
+            .ct-dist {
+                background: var(--input-bg);
+                color: var(--fg-muted);
+            }
+
+            .card-price {
+                font-family: 'DM Mono',monospace;
+                font-size: 11px;
+                color: var(--fg-muted);
+                margin-bottom: 8px;
+            }
+
+            .card-price strong {
+                color: var(--fg);
+            }
+
+            .ballot-note {
+                background: rgba(245,158,11,0.05);
+                border: 1px solid rgba(245,158,11,0.15);
+                border-left: 3px solid var(--c-amber);
+                border-radius: 0 6px 6px 0;
+                padding: 8px 12px;
+                font-size: 11px;
+                color: var(--c-amber);
+                margin-bottom: 10px;
+                line-height: 1.6;
+            }
+
+            .card-actions {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-reg {
+                background: var(--accent);
+                border: none;
+                border-radius: 7px;
+                padding: 7px 18px;
+                font-size: 12px;
+                font-weight: 700;
+                font-family: 'DM Sans',sans-serif;
+                color: #fff;
+                cursor: pointer;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                transition: background .15s,transform .1s;
+            }
+
+            .btn-reg:hover {
+                background: var(--accent2);
+                transform: scale(1.02);
+            }
+
+            .btn-reg.disabled {
+                background: var(--input-bg);
+                color: var(--fg-muted);
+                cursor: default;
+                transform: none;
+                border: 1px solid var(--border);
+            }
+
+            .btn-ig {
+                background: var(--input-bg);
+                border: 1px solid var(--border);
+                border-radius: 7px;
+                padding: 7px 14px;
+                font-size: 11px;
+                font-family: 'DM Mono',monospace;
+                color: var(--fg-muted);
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                transition: all .15s;
+            }
+
+            .btn-ig:hover {
+                border-color: rgba(232,131,58,0.3);
+                color: var(--fg);
+            }
+
+            .btn-src {
+                margin-left: auto;
+                font-family: 'DM Mono',monospace;
+                font-size: 9px;
+                color: var(--fg-muted);
+                text-decoration: none;
+                letter-spacing: 1px;
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                transition: color .15s;
+                opacity: 0.5;
+            }
+
+            .btn-src:hover {
+                opacity: 1;
+            }
+
+            /* ── EMPTY ── */
+            .empty {
+                text-align: center;
+                padding: 80px 20px;
+                color: var(--fg-muted);
+            }
+
+            .empty-icon {
+                font-size: 48px;
+                margin-bottom: 16px;
+            }
+
+            /* ── LEGEND ── */
+            .legend {
+                background: var(--card);
+                border: 1px solid var(--border);
+                border-radius: 10px;
+                padding: 16px 20px;
+                margin-top: 24px;
+                font-size: 11px;
+                color: var(--fg-muted);
+                line-height: 2;
+                font-family: 'DM Mono',monospace;
+            }
+
+            .legend-title {
+                font-size: 9px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                color: var(--fg-muted);
+                margin-bottom: 10px;
+            }
+
+            /* ── FOOTER ── */
+            .footer {
+                text-align: center;
+                padding: 32px 20px;
+                border-top: 1px solid var(--border);
+                margin-top: 16px;
+            }
+
+            .footer-brand {
+                font-family: 'Bebas Neue',sans-serif;
+                font-size: 22px;
+                letter-spacing: 3px;
+                color: var(--accent);
+                margin-bottom: 6px;
+            }
+
+            .footer-tag {
+                font-family: 'DM Mono',monospace;
+                font-size: 10px;
+                color: var(--fg-muted);
+                letter-spacing: 2px;
+                margin-bottom: 12px;
+            }
+
+            .footer-sources {
+                font-family: 'DM Mono',monospace;
+                font-size: 10px;
+                color: var(--fg-muted);
+                line-height: 2;
+            }
+
+            .footer-sources a {
+                color: var(--fg-muted);
+                text-decoration: none;
+                transition: color .15s;
+            }
+
+            .footer-sources a:hover {
+                color: var(--accent);
+            }
+
+            /* ── MOBILE ── */
+            @media(max-width: 600px) {
+                .stats {
+                    grid-template-columns:repeat(2,1fr);
+                }
+
+                .stat:nth-child(2) {
+                    border-right: none;
+                }
+
+                .stat:nth-child(3) {
+                    border-top: 1px solid var(--border);
+                }
+
+                .hero h1 {
+                    font-size: clamp(48px,16vw,80px);
+                }
+
+                .card-top {
+                    flex-direction: column;
+                    gap: 6px;
+                }
+
+                .btn-src {
+                    display: none;
+                }
+
+                .filter-sep {
+                    display: none;
+                }
+            }
+           /* ── TOMBOL BACK & PENYESUAIAN RUANG ── */
+            .hero {
+                padding-top: 84px !important; /* Dorong konten ke bawah biar ga ketabrak tombol */
+            }
+            .btn-back-home {
+                position: absolute;
+                top: 24px;
+                left: 24px;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 8px 16px;
+                border-radius: 100px;
+                background: var(--card);
+                border: 1px solid var(--border);
+                color: var(--fg-muted);
+                font-family: 'DM Sans', sans-serif;
+                font-size: 13px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all .2s;
+                z-index: 50;
+            }
+            .btn-back-home:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+                background: var(--input-bg);
+                transform: translateX(-4px);
+            }
+            @media(max-width: 600px) {
+                .hero {
+                    padding-top: 74px !important; /* Penyesuaian jarak untuk layar HP */
+                }
+                .btn-back-home {
+                    top: 16px;
+                    left: 16px;
+                    padding: 6px 12px;
+                    font-size: 11px;
+                }
+            }
+        </style>
+        <!-- Microsoft Clarity -->
+        <script type="text/javascript">
+            (function(c, l, a, r, i, t, y) {
+                c[a] = c[a] || function() {
+                    (c[a].q = c[a].q || []).push(arguments)
+                }
+                ;
+                t = l.createElement(r);
+                t.async = 1;
+                t.src = "https://www.clarity.ms/tag/" + i;
+                y = l.getElementsByTagName(r)[0];
+                y.parentNode.insertBefore(t, y);
+            }
+            )(window, document, "clarity", "script", "wmd5cahxkt");
+        </script>
+    </head>
+    <body>
+        <header class="hero">
+            <div class="hero-orb"></div>
+            <div class="eyebrow">
+                <div class="eyebrow-dot"></div>
+                Indonesia · Running · 2026
+            </div>
+            <h1>
+                RACE<br>
+                <em>CALENDAR</em>
+            </h1>
+            <p class="hero-sub">111 event lari Indonesia 2026 — road &amp;trail, terverifikasi dari sumber resmi.</p>
+            <div class="watermark">
+                #GrowthEveryday
+            </div>
+            <div class="theme-toggle" id="theme-toggle">
+                <button class="theme-btn active" data-theme="dark" title="Dark">🌙</button>
+                <button class="theme-btn" data-theme="light" title="Light">☀️</button>
+                <button class="theme-btn" data-theme="warm" title="Warm Cream">🌿</button>
+            </div>
+        </header>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-n">111</div>
+                <div class="stat-l">Total Event</div>
+            </div>
+            <div class="stat">
+                <div class="stat-n">111</div>
+                <div class="stat-l">Upcoming</div>
+            </div>
+            <div class="stat">
+                <div class="stat-n">77</div>
+                <div class="stat-l">Road</div>
+            </div>
+            <div class="stat">
+                <div class="stat-n">34</div>
+                <div class="stat-l">Trail</div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="controls-inner">
+                <div class="search-wrap">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Cari event, kota, atau provinsi...">
+                </div>
+                <div class="filter-group">
+                    <div id="typeFilter" style="display:flex;gap:6px;flex-wrap:wrap;">
+                        <button class="chip active" data-type="all">Semua Tipe</button>
+                        <button class="chip road" data-type="ROAD">🛣 Road</button>
+                        <button class="chip trail" data-type="TRAIL">🏔 Trail</button>
+                    </div>
+                    <div class="filter-sep"></div>
+                    <div id="statusFilter" style="display:flex;gap:6px;flex-wrap:wrap;">
+                        <button class="chip active" data-status="all">Semua Status</button>
+                        <button class="chip" data-status="LIVE">🔴 Live</button>
+                        <button class="chip" data-status="UPCOMING">Upcoming</button>
+                        <button class="chip" data-status="FINISHED">Finished</button>
+                    </div>
+                    <div class="filter-sep"></div>
+                    <div id="provFilter" style="display:flex;gap:6px;flex-wrap:wrap;">
+                        <button class="chip prov active" data-prov="all">Semua Provinsi</button>
+                        <button class="chip prov" data-prov="Jawa Timur">Jatim</button>
+                        <button class="chip prov" data-prov="Jawa Tengah">Jateng</button>
+                        <button class="chip prov" data-prov="DI Yogyakarta">Yogya</button>
+                        <button class="chip prov" data-prov="Jawa Barat">Jabar</button>
+                        <button class="chip prov" data-prov="DKI Jakarta">Jakarta</button>
+                        <button class="chip prov" data-prov="Bali">Bali</button>
+                        <button class="chip prov" data-prov="NTB">NTB</button>
+                        <button class="chip prov" data-prov="Banten">Banten</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main class="main">
+            <div class="results-bar">
+                <div class="results-count">
+                    Menampilkan <strong id="shownCount">111</strong>
+                    dari <strong id="totalCount">111</strong>
+                    event
+                </div>
+                <button class="reset-btn" id="resetBtn" onclick="resetAll()">✕ Reset Filter</button>
+            </div>
+            <div id="raceList"></div>
+            <div class="legend">
+                <div class="legend-title">// Keterangan Sistem Pendaftaran</div>
+                <div>
+                    <span style="color:var(--c-green)">⚡ FCFS</span>
+                    — First Come First Served. Langsung bayar = langsung terdaftar.
+                </div>
+                <div>
+                    <span style="color:var(--c-amber)">🎲 BALLOT</span>
+                    — Sistem undian. Daftar dulu, tunggu pengumuman lolos.
+                </div>
+                <div>
+                    <span style="color:var(--c-blue)">🏆 KUALIFIKASI</span>
+                    — Perlu rekam jejak race.
+                </div>
+                <div>
+                    <span style="color:var(--c-purple)">🎯 MULTI-REG</span>
+                    — Kombinasi Fast Track + Ballot atau program lain.
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-brand">Dico</div>
+                <div class="footer-tag">#GROWTHEVERYDAY · Sleman, Daerah Istimewa Yogyakarta</div>
+                <div class="footer-sources">
+                    Sumber data:
+      <a href="https://kalenderlari.com" target="_blank" rel="noopener">kalenderlari.com</a>
+                    ·
+      <a href="https://jadwallari.id" target="_blank" rel="noopener">jadwallari.id</a>
+                    ·
+      <a href="https://ayolari.id" target="_blank" rel="noopener">ayolari.id</a>
+                    ·
+      website resmi EO<br>
+                    Diperbarui Mei 2026 · DM <a href="https://instagram.com/dicorzki" target="_blank" rel="noopener">@dicorzki</a>
+                </div>
+            </div>
+        </main>
+        <script>
+        var MONTHS = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+        var MONTH_NAMES = ["", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+
+             // Kosongin datanya, nanti diisi otomatis dari JSON
+            var RACES = [];
+            var activeType = "all";
+            var activeStatus = "all";
+            var activeProv = "all";
+            var searchQ = "";
+
+            function fmtDate(s) {
+                if (!s)
+                    return "-";
+                var d = new Date(s + "T00:00:00");
+                return d.getDate() + " " + MONTHS[d.getMonth()] + " " + d.getFullYear();
+            }
+
+            function fmtIDR(n) {
+                if (!n || n === 0)
+                    return null;
+                return "Rp " + Number(n).toLocaleString("id-ID");
+            }
+
+            function escHtml(s) {
+                if (!s)
+                    return "";
+                return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+            }
+
+            function buildCard(r) {
+    // 1. Deklarasikan variabel pendukung
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    // INI BARIS YANG HILANG/SALAH DI KODE KAMU (PENTING!)
+    var raceDate = new Date(r.date); 
+    
+    var typeClass = (r.runType || "ROAD").toLowerCase();
+    
+    // 2. Logika Status Otomatis
+    var statusHtml = "";
+    if (raceDate.getTime() === today.getTime()) {
+        statusHtml = '<div class="status-pill s-live"><div class="live-dot"></div>LIVE</div>';
+    } else if (raceDate < today) {
+        statusHtml = '<div class="status-pill" style="background: #222; color: #555;">FINISHED</div>';
+    } else {
+        statusHtml = '<div class="status-pill s-upcoming">UPCOMING</div>';
+    }
+
+    // 3. Mapping Tipe & Badge
+    var typeMap = { ROAD: "🛣 Road", TRAIL: "🏔 Trail", MULTI: "Multi" };
+    var typeChip = '<span class="chip-tag ct-' + typeClass + '">' + (typeMap[r.runType] || r.runType) + '</span>';
+    
+    var regMap = { FCFS: "⚡ FCFS", BALLOT: "🎲 BALLOT", KUALIFIKASI: "🏆 KUAL", MIXED: "🎯 MULTI-REG" };
+    var regCls = { FCFS: "ct-fcfs", BALLOT: "ct-ballot", KUALIFIKASI: "ct-kual", MIXED: "ct-mixed" };
+    var regChip = '<span class="chip-tag ' + (regCls[r.regType] || "") + '">' + (regMap[r.regType] || r.regType) + '</span>';
+
+    // 4. Jarak & Harga
+    var distChips = (r.distances || []).map(function(d) {
+        return '<span class="chip-tag ct-dist">' + d + '</span>';
+    }).join("");
+
+    var pMin = fmtIDR(r.priceMin);
+    var pMax = fmtIDR(r.priceMax);
+    var priceHtml = "";
+    if (pMin && pMax && r.priceMin !== r.priceMax) {
+        priceHtml = '<div class="card-price">Harga: <strong>' + pMin + ' – ' + pMax + '</strong></div>';
+    } else if (pMin) {
+        priceHtml = '<div class="card-price">Harga: <strong>' + pMin + '</strong></div>';
+    }
+
+    // 5. Tombol Aksi
+    var regBtn = (r.registerUrl && r.registerUrl !== "#") 
+        ? '<a class="btn-reg" href="' + escHtml(r.registerUrl) + '" target="_blank" rel="noopener">Daftar →</a>' 
+        : '<span class="btn-reg disabled">Cek IG</span>';
+    
+    var igBtn = (r.instagram) ? '<a class="btn-ig" href="' + escHtml(r.igUrl) + '" target="_blank" rel="noopener">📷 ' + escHtml(r.instagram) + '</a>' : "";
+    var srcBtn = (r.sourceUrl && r.sourceUrl !== "#") ? '<a class="btn-src" href="' + escHtml(r.sourceUrl) + '" target="_blank" rel="noopener">↗ sumber</a>' : "";
+
+    // 6. Return HTML Card
+    return '<div class="race-card ' + typeClass + '">' + 
+           '<div class="card-stripe"></div>' + 
+           '<div class="card-inner">' + 
+           '<div class="card-top"><div class="card-name">' + escHtml(r.name) + '</div>' + statusHtml + '</div>' + 
+           '<div class="card-meta"><div class="meta-item">📅 ' + fmtDate(r.date) + '</div><div class="meta-item">📍 ' + escHtml(r.city) + ', ' + escHtml(r.province) + '</div></div>' + 
+           '<div class="card-chips">' + typeChip + regChip + distChips + '</div>' + 
+           priceHtml + 
+           '<div class="card-actions">' + regBtn + igBtn + srcBtn + '</div>' + 
+           '</div></div>';
+}
+
+         function getFiltered() {
+                var today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                return RACES.filter(function(r) {
+                    if (!r || !r.date) return false;
+
+                    var raceDate = new Date(r.date);
+                    var raceStatus = "";
+
+                    // Tentukan status internal
+                    if (raceDate.getTime() === today.getTime()) {
+                        raceStatus = "LIVE";
+                    } else if (raceDate < today) {
+                        raceStatus = "DONE"; // Kita pakai kata "DONE" untuk logika internal
+                    } else {
+                        raceStatus = "UPCOMING";
+                    }
+
+                    // Filter Tipe (Road/Trail)
+                    if (activeType !== "all" && r.runType !== activeType) return false;
+                    
+                    // --- LOGIKA BARU UNTUK STATUS ---
+                    if (activeStatus === "all") {
+                        // JIKA "Semua Status": Sembunyikan yang sudah lewat (DONE)
+                        if (raceStatus === "DONE") return false;
+                    } else {
+                        // JIKA pilih filter spesifik
+                        if (activeStatus === "UPCOMING" && raceStatus !== "UPCOMING") return false;
+                        if (activeStatus === "LIVE" && raceStatus !== "LIVE") return false;
+                        if (activeStatus === "FINISHED" && raceStatus !== "DONE") return false;
+                    }
+                    // --------------------------------
+                    
+                    // Filter Provinsi
+                    if (activeProv !== "all" && r.province !== activeProv) return false;
+                    
+                    // Filter Search
+                    if (searchQ) {
+                        var hay = ((r.name || "") + " " + (r.city || "") + " " + (r.province || "")).toLowerCase();
+                        if (hay.indexOf(searchQ) < 0) return false;
+                    }
+                    return true;
+                });
+            }
+
+function render() {
+   var filtered = getFiltered();
+
+    // Logika sortir biar yang paling deket ada di atas
+    filtered.sort(function(a, b) {
+        return new Date(a.date) - new Date(b.date);
+    });
+
+    // Update teks kecil "Menampilkan X dari Y"
+    var shownCountEl = document.getElementById("shownCount");
+    var totalCountEl = document.getElementById("totalCount");
+    if(shownCountEl) shownCountEl.textContent = filtered.length;
+    if(totalCountEl) totalCountEl.textContent = RACES.length;
+
+    // ======================================================
+    // LOGIKA BARU: UPDATE 4 KOTAK DASHBOARD STATISTIK
+    // ======================================================
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    var countUpcoming = 0;
+    var countRoad = 0;
+    var countTrail = 0;
+
+    // Hitung data dari hasil filter saat ini
+    filtered.forEach(function(r) {
+        if (r.runType === "ROAD") countRoad++;
+        if (r.runType === "TRAIL") countTrail++;
+        
+        var rDate = new Date(r.date);
+        // Kalau tanggalnya hari ini atau di masa depan, hitung sebagai Upcoming
+        if (rDate.getTime() >= today.getTime()) countUpcoming++;
+    });
+
+    // Tembak angkanya ke HTML
+    var statBoxes = document.querySelectorAll(".stat-n");
+    if (statBoxes.length >= 4) {
+        statBoxes[0].textContent = filtered.length; // Box 1: Total Event
+        statBoxes[1].textContent = countUpcoming;   // Box 2: Upcoming
+        statBoxes[2].textContent = countRoad;       // Box 3: Road
+        statBoxes[3].textContent = countTrail;      // Box 4: Trail
+    }
+    // ======================================================
+
+    var list = document.getElementById("raceList");
+    var hasFilter = activeType !== "all" || activeStatus !== "all" || activeProv !== "all" || searchQ !== "";
+    document.getElementById("resetBtn").classList.toggle("show", hasFilter);
+
+    if (filtered.length === 0) {
+        list.innerHTML = '<div class="empty"><div class="empty-icon">🏔️</div><p>Tidak ada event ditemukan.<br>Coba ubah atau reset filter.</p></div>';
+        return;
+    }
+
+    var groups = {};
+    filtered.forEach(function(r) {
+        if (!r.date) return;
+        var m = r.date.slice(0, 7); // Ambil YYYY-MM
+        if (!groups[m]) groups[m] = [];
+        groups[m].push(r);
+    });
+
+    var html = "";
+    Object.keys(groups).sort().forEach(function(m) {
+        var mo = parseInt(m.slice(5)); // Ambil angka bulan
+        var yr = m.slice(0, 4);
+        
+        // Pastikan nama bulan ada
+        var namaBulan = MONTH_NAMES[mo] ? MONTH_NAMES[mo].toUpperCase() : "UNKNOWN";
+        
+        html += '<div class="month-group">';
+        html += '<div class="month-header"><div class="month-label">' + namaBulan + ' ' + yr + '</div><div class="month-line"></div><div class="month-count">' + groups[m].length + ' event</div></div>';
+        html += groups[m].map(buildCard).join("");
+        html += '</div>';
+    });
+    
+    // INI PENTING: Isi container dengan HTML yang baru
+    list.innerHTML = html; 
+}
+
+            function resetAll() {
+                activeType = "all";
+                activeStatus = "all";
+                activeProv = "all";
+                searchQ = "";
+                document.getElementById("searchInput").value = "";
+                document.querySelectorAll("#typeFilter .chip").forEach(function(c) {
+                    c.classList.toggle("active", c.dataset.type === "all");
+                });
+                document.querySelectorAll("#statusFilter .chip").forEach(function(c) {
+                    c.classList.toggle("active", c.dataset.status === "all");
+                });
+                document.querySelectorAll("#provFilter .chip").forEach(function(c) {
+                    c.classList.toggle("active", c.dataset.prov === "all");
+                });
+                render();
+            }
+
+            document.getElementById("searchInput").addEventListener("input", function() {
+                searchQ = this.value.trim().toLowerCase();
+                render();
+            });
+            document.getElementById("typeFilter").addEventListener("click", function(e) {
+                var t = e.target.dataset.type;
+                if (!t)
+                    return;
+                activeType = t;
+                document.querySelectorAll("#typeFilter .chip").forEach(function(c) {
+                    c.classList.toggle("active", c.dataset.type === activeType);
+                });
+                render();
+            });
+            document.getElementById("statusFilter").addEventListener("click", function(e) {
+                var s = e.target.dataset.status;
+                if (!s)
+                    return;
+                activeStatus = s;
+                document.querySelectorAll("#statusFilter .chip").forEach(function(c) {
+                    c.classList.toggle("active", c.dataset.status === activeStatus);
+                });
+                render();
+            });
+            document.getElementById("provFilter").addEventListener("click", function(e) {
+                var p = e.target.dataset.prov;
+                if (!p)
+                    return;
+                activeProv = p;
+                document.querySelectorAll("#provFilter .chip").forEach(function(c) {
+                    c.classList.toggle("active", c.dataset.prov === activeProv);
+                });
+                render();
+            });
+
+            /* ── Theme (sama persis RunPlan) ── */
+            function applyTheme(theme, silent) {
+                document.documentElement.setAttribute("data-theme", theme === "dark" ? "" : theme);
+                if (!silent && localStorage) {
+                    try {
+                        localStorage.setItem("rc-theme", theme);
+                    } catch (err) {}
+                }
+                document.querySelectorAll(".theme-btn").forEach(function(b) {
+                    b.classList.toggle("active", b.getAttribute("data-theme") === theme);
+                });
+            }
+
+            (function() {
+                var saved = localStorage ? localStorage.getItem("rc-theme") : null;
+                if (saved)
+                    applyTheme(saved, true);
+                document.querySelectorAll(".theme-btn").forEach(function(btn) {
+                    btn.addEventListener("click", function() {
+                        applyTheme(btn.getAttribute("data-theme"), false);
+                    });
+                });
+            }
+            )();
+
+            // Fungsi buat narik data JSON hasil dari Python scraper
+            function loadRaceData() {
+                fetch('races_data.json')
+                    .then(response => {
+                        if (!response.ok) throw new Error("Gagal load JSON");
+                        return response.json();
+                    })
+                    .then(data => {
+                        RACES = data; // Timpa array RACES kosong dengan data dari JSON
+                        render(); // Render ulang tampilan kalendernya
+                    })
+                    .catch(error => {
+                        console.error('Error narik data:', error);
+                        document.getElementById("raceList").innerHTML = 
+                            '<div class="empty"><div class="empty-icon">⚠️</div><p>Gagal memuat data kalender.<br>Pastikan kamu buka file lewat Live Server.</p></div>';
+                    });
+            }
+
+            // Panggil fungsinya saat web selesai diload
+            loadRaceData();
+        </script>
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"2983cdb11bfc40e58641b3a73f86313f","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+    </body>
+</html>
