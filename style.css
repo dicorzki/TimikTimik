@@ -4297,3 +4297,53 @@
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
+/* ======================================================
+   TWEAK KHUSUS DESKTOP BIAR GAK KEKECILAN (ANTI ZOOM-OUT)
+   ====================================================== */
+@media (min-width: 768px) {
+    /* 1. Kunci lebar konten biar rapi di tengah, sejajar persis sama header */
+    .modul-section, .main, .dash-body {
+        max-width: 1000px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100%;
+    }
+
+    /* 2. Jarak antar kolom kiri (form) dan kanan (hasil) lebih lega */
+    .main {
+        gap: 32px !important;
+    }
+
+    /* 3. Besarin font global biar mata gak cepet capek */
+    body {
+        font-size: 15px !important;
+    }
+
+    /* 4. Besarin font judul section dan label form */
+    .form-group label, .section-title {
+        font-size: 13px !important;
+        letter-spacing: 0.1em;
+        margin-bottom: 8px !important;
+    }
+
+    /* 5. Bikin input box dan tombol lebih gede & nyaman diklik */
+    select, input, .btn-generate {
+        font-size: 14px !important;
+        padding: 12px 16px !important; 
+    }
+
+    /* 6. Besarin teks di dalem kartu modul Road Run / Trail Run */
+    .modul-title {
+        font-size: 18px !important;
+    }
+    .modul-desc {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* 7. Besarin ukuran radio button / custom checklist kalau ada */
+    .radio-custom {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}

@@ -488,7 +488,7 @@
 }
 
 .header-right {
-    display: flex !important;
+    position: relative;
     align-items: center !important;
     gap: 12px;
 }
@@ -500,41 +500,25 @@
 }
 
 .burger-btn {
-    display: none !important; /* <--- INI SUDAH BENER */
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--text);
-    padding: 0;
-    line-height: 1;
-    margin-right: -4px;
-    /* display: flex;  <--- HAPUS ATAU KOMENTARI BARIS INI COK! */
-    align-items: center;
-    justify-content: center;
+    display: none; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text); padding: 0 4px; line-height: 1;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 7200px) {
     .burger-btn { 
-        display: flex !important; /* BIAR DI HP BARU MUNCUL */
+        display: block; /* BIAR DI HP BARU MUNCUL */
     }
     .nav-group {
-        display: none !important;
-        position: absolute;
-        top: 54px;
-        right: 16px;
-        background: var(--bg);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 16px;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
+        display: none;
+        align-items: center !important;
+        position: absolute; top: 100%; right: 0; margin-top: 15px;
+        background: var(--bg); border: 1px solid var(--border2);
+        border-radius: 12px; padding: 16px;
+        flex-direction: column; align-items: flex-end; gap: 12px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-        z-index: 1000;
-        min-width: 150px;
+        z-index: 999; min-width: 160px;
     }
-    .nav-group.show { display: flex !important; }
+    [data-theme="dark"] .nav-group { box-shadow: 0 8px 24px rgba(0,0,0,0.6); }
+        .nav-group.show { display: flex; }
 }
 
     </style>

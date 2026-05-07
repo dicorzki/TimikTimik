@@ -38,27 +38,117 @@ if (!_rpUser) {
   const headerRight = document.querySelector('.header-right');
   if (!headerRight) return;
 
+  // Hapus fix CSS numpuk yang lama (kalau masih ada)
+  const oldFix = document.getElementById('header-mobile-fix');
+  if (oldFix) oldFix.remove();
 
-  backBtn.addEventListener('mouseenter', () => {
-    backBtn.style.borderColor = 'var(--accent)';
-    backBtn.style.color = 'var(--accent)';
-  });
-  backBtn.addEventListener('mouseleave', () => {
-    backBtn.style.borderColor = 'var(--border2)';
-    backBtn.style.color = 'var(--text2)';
-  });
+  // [FIX] Suntik CSS untuk Burger Menu Dropdown
+  if (!document.getElementById('header-burger-fix')) {
+    const styleFix = document.createElement('style');
+    styleFix.id = 'header-burger-fix';
+    styleFix.innerHTML = `
+      .burger-btn { display: none; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text); padding: 0 4px; line-height: 1; }
+      .nav-group { display: flex; align-items: center; gap: 12px; }
+      @media (max-width: 14400px) {
+        .back-to-dash { display: none !important; }
+        .header-right { position: relative; gap: 12px !important; }
+        .burger-btn { display: block; }
+        .nav-group {
+          display: none;
+          align-items: center !important;
+          position: absolute; top: 100%; right: 0; margin-top: 15px;
+          background: var(--bg); border: 1px solid var(--border2);
+          border-radius: 12px; padding: 16px;
+          flex-direction: column; align-items: flex-end; gap: 12px;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+          z-index: 999; min-width: 160px;
+        }
+        [data-theme="dark"] .nav-group { box-shadow: 0 8px 24px rgba(0,0,0,0.6); }
+        .nav-group.show { display: flex; }
+      }
+    `;
+    document.head.appendChild(styleFix);
+  }
+
+  // Container untuk isi menu
+  const navGroup = document.createElement('div');
+  navGroup.className = 'nav-group';
+
+  // Tombol back ke dashboard
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.classList.add('back-to-dash');
+  backBtn.title = 'Kembali ke Dashboard';
+  backBtn.style.cssText = `
+    display:inline-flex;align-items:center;gap:5px;
+    padding:6px 12px;border-radius:100px;
+    border:1.5px solid var(--border2);background:transparent;
+    color:var(--text2);font-size:12px;font-weight:600;
+    font-family:'Inter',sans-serif;text-decoration:none;
+    transition:all .15s;flex-shrink:0;
+  `;
+  backBtn.innerHTML = `
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"/>
+      <polyline points="12 19 5 12 12 5"/>
+    </svg>
+    Dashboard
+  `;
 
   // Info user
   const userInfo = document.createElement('div');
-  userInfo.style.cssText = 'font-size:12px;color:var(--text3);white-space:nowrap;';
+  userInfo.style.cssText = 'font-size:12px;color:var(--text3);white-space:nowrap; font-family:"Inter",sans-serif;';
   userInfo.innerHTML = `Halo, <span style="color:var(--text);font-weight:600;">${_rpUser.username}</span>`;
 
- 
-  // Insert sebelum elemen pertama header-right (btn-theme)
-  const firstChild = headerRight.firstChild;
-  headerRight.insertBefore(backBtn, firstChild);
-  headerRight.insertBefore(userInfo, firstChild);
-  headerRight.appendChild(logoutBtn);
+  // Logout btn
+  const logoutBtn = document.createElement('button');
+  logoutBtn.textContent = 'Logout';
+  logoutBtn.style.cssText = `
+    background:rgba(255,0,0,0.08);color:#e06060;
+    border:1px solid rgba(255,0,0,0.2);
+    padding:6px 12px;border-radius:8px;
+    cursor:pointer;font-size:11px;font-weight:600;
+    font-family:'Inter',sans-serif;
+  `;
+  logoutBtn.onclick = () => { 
+    const theme = localStorage.getItem('rp-theme');
+    localStorage.clear();
+    if (theme) localStorage.setItem('rp-theme', theme);
+    clearSession(); window.location.href = 'auth.html'; 
+  };
+
+  // Tombol Burger
+  const burgerBtn = document.createElement('button');
+  burgerBtn.className = 'burger-btn';
+  burgerBtn.innerHTML = '☰'; // Ikon Hamburger
+  burgerBtn.onclick = (e) => {
+    e.stopPropagation(); // Biar menunya nggak langsung nutup pas diklik
+    navGroup.classList.toggle('show');
+  };
+
+  // Masukin elemen ke navGroup
+  navGroup.appendChild(userInfo);
+  navGroup.appendChild(backBtn);
+  navGroup.appendChild(logoutBtn);
+
+  // Cari tombol tema bawaan
+  const themeBtn = document.getElementById('btn-theme');
+  
+  // Susun urutannya: [Isi Menu] -> [Tombol Tema] -> [Tombol Burger]
+  if (themeBtn) {
+    headerRight.insertBefore(navGroup, themeBtn);
+  } else {
+    headerRight.appendChild(navGroup);
+  }
+  headerRight.appendChild(burgerBtn);
+
+  // Tutup menu otomatis kalau user nge-klik di luar area kotak menu
+  document.addEventListener('click', (e) => {
+    if (!navGroup.contains(e.target) && !burgerBtn.contains(e.target)) {
+      navGroup.classList.remove('show');
+    }
+  });
 })();
 
 // ── 3. TEMA SYNC ───────────────────────────────────────────
@@ -114,7 +204,7 @@ if (_urlPlanId) {
       console.error('Load plan error:', err);
     }
   })();
-} } else {
+} else {
   // [REVISI FIX] Sapu sisa form, TAPI lindungi mutlak data login & tema!
   Object.keys(localStorage).forEach(k => {
     const keyLower = k.toLowerCase();
@@ -133,7 +223,6 @@ if (_urlPlanId) {
   if (typeof state !== 'undefined') state.generated = false;
   if (typeof trailState !== 'undefined') trailState.generated = false;
 }
-
 function _loadRoadPlan(plan) {
   // Isi state road (variabel global di generator.html)
   if (typeof state === 'undefined') return;
@@ -382,7 +471,16 @@ async function _loadAndApplySessionLogs(planId) {
   if (!planId) return;
   try {
     const logs = await getSessionLogs(planId);
-    // Apply ke localStorage agar UI asli bisa membacanya
+    
+    // [TAMBAHAN FIX] Bersihkan sisa-sisa data dari program lain di localStorage
+    Object.keys(localStorage).forEach(k => {
+      // Hapus semua key yang berhubungan sama status & note biar gak bocor antar program
+      if (k.startsWith('rp-status-') || k.startsWith('rp-note-') || k.startsWith('trail-')) {
+        localStorage.removeItem(k);
+      }
+    });
+
+    // Apply ke localStorage agar UI asli bisa membacanya sesuai program saat ini
     Object.entries(logs).forEach(([key, val]) => {
       const [wIdx, dIdx] = key.split('-');
       // Road keys
