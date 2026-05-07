@@ -10,16 +10,18 @@
 
 const CACHE_NAME = 'runplan-v2';
 const STATIC_SHELL = [
-  '/',
-  '/index.html',
-  '/auth.html',
-  '/generator.html',
-  '/kalender.html',
-  '/style.css',
-  '/supabase_config.js',
-  '/integration_patch.js',
-  '/manifest.json',
-  'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap',
+  './',
+  './index.html',
+  './auth.html',
+  './generator.html',
+  './kalender.html',
+  './style.css',
+  './supabase_config.js',
+  './integration_patch.js',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png',
+  'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap'
 ];
 
 // ── INSTALL — cache shell ──────────────────────────────────
