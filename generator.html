@@ -5300,7 +5300,8 @@ function generateTrailProgram() {
     var cotEl  = document.getElementById("custom-race-cot");
     var nameREl = document.getElementById("custom-race-name");
     var tgtEl  = document.getElementById("custom-race-target");
-    raceKm  = kmEl  ? (parseInt(kmEl.value)   || 38)   : 38;
+    var parsedKm = kmEl ? parseInt(kmEl.value, 10) : NaN;
+    raceKm = !isNaN(parsedKm) ? parsedKm : 38;
     raceDp  = dpEl  ? (parseInt(dpEl.value)   || 2000) : 2000;
     raceCOT = cotEl ? (parseInt(cotEl.value)  || 15) * 60 : 900;
     raceName = nameREl ? (nameREl.value.trim() || "Custom Race") : "Custom Race";
@@ -5315,7 +5316,7 @@ function generateTrailProgram() {
     raceName = preset.name;
   }
 
-  if (!raceKm || raceKm < 5) { alert("Pilih race target terlebih dahulu."); return; }
+  if (!raceKm || raceKm < 5) { alert("Jarak race minimal 5km ya!"); return; }
   if (!raceDp || raceDp < 100) { alert("Isi Elevasi Gain race terlebih dahulu."); return; }
 
   /* Validasi tanggal race */
