@@ -1,6 +1,6 @@
 {
-  "name": "RunPlan — Program Lari Runner Serius Indonesia",
-  "short_name": "RunPlan",
+  "name": "TimikTimik — Program Lari Tiyang Sepuh Indonesia",
+  "short_name": "TimikTimik",
   "description": "Generate program lari personalmu dengan metode Hal Higdon, Jeff Galloway & Jack Daniels. Gratis, Bahasa Indonesia.",
   "start_url": "/index.html",
   "scope": "/",
@@ -25,7 +25,7 @@
   ],
   "screenshots": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 390 844'><rect width='390' height='844' fill='%23FAFAF8'/><text x='195' y='422' text-anchor='middle' font-size='48' fill='%23E84B00'>RunPlan</text></svg>",
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 390 844'><rect width='390' height='844' fill='%23FAFAF8'/><text x='195' y='422' text-anchor='middle' font-size='48' fill='%23E84B00'>TimikTimik</text></svg>",
       "sizes": "390x844",
       "type": "image/svg+xml",
       "form_factor": "narrow"
