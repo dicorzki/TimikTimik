@@ -1,5 +1,5 @@
 /**
- * TimikTimik — Integration Patch
+ * RunPlan — Integration Patch
  * ============================================================
  * Tambahkan script ini TEPAT sebelum </body> di generator.html
  * dengan tag: <script type="module" src="integration_patch.js"></script>
@@ -38,52 +38,13 @@ if (!_rpUser) {
   const headerRight = document.querySelector('.header-right');
   if (!headerRight) return;
 
-
-
-// Hapus fix CSS numpuk yang lama (kalau masih ada)
-  const oldFix = document.getElementById('header-mobile-fix');
-  if (oldFix) oldFix.remove();
-
-  // [FIX] Suntik CSS untuk Burger Menu Dropdown
-  if (!document.getElementById('header-burger-fix')) {
-    const styleFix = document.createElement('style');
-    styleFix.id = 'header-burger-fix';
-    styleFix.innerHTML = `
-      .burger-btn { display: none; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text); padding: 0 4px; line-height: 1; }
-      .nav-group { display: flex; align-items: center; gap: 12px; }
-      @media (max-width: 720px) {
-      .back-to-dash { display: none !important; }
-        .header-right { position: relative; gap: 12px !important; }
-        .burger-btn { display: block; }
-        .nav-group {
-          display: none;
-          align-items: center;
-          position: absolute; top: 100%; right: 0; margin-top: 15px;
-          background: var(--bg); border: 1px solid var(--border2);
-          border-radius: 12px; padding: 16px;
-          flex-direction: column; align-items: flex-end; gap: 12px;
-          box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-          z-index: 999; min-width: 160px;
-        }
-        [data-theme="dark"] .nav-group { box-shadow: 0 8px 24px rgba(0,0,0,0.6); }
-        .nav-group.show { display: flex; }
-      }
-    `;
-    document.head.appendChild(styleFix);
-  }
-
-  // Container untuk isi menu
-  const navGroup = document.createElement('div');
-  navGroup.className = 'nav-group';
-
   // Tombol back ke dashboard
   const backBtn = document.createElement('a');
   backBtn.href = 'index.html';
-  backBtn.classList.add('back-to-dash');
   backBtn.title = 'Kembali ke Dashboard';
   backBtn.style.cssText = `
     display:inline-flex;align-items:center;gap:5px;
-    padding:6px 12px;border-radius:100px;
+    padding:5px 11px;border-radius:100px;
     border:1.5px solid var(--border2);background:transparent;
     color:var(--text2);font-size:12px;font-weight:600;
     font-family:'Inter',sans-serif;text-decoration:none;
@@ -97,72 +58,39 @@ if (!_rpUser) {
     </svg>
     Dashboard
   `;
+  backBtn.addEventListener('mouseenter', () => {
+    backBtn.style.borderColor = 'var(--accent)';
+    backBtn.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', () => {
+    backBtn.style.borderColor = 'var(--border2)';
+    backBtn.style.color = 'var(--text2)';
+  });
 
   // Info user
   const userInfo = document.createElement('div');
-  userInfo.style.cssText = 'font-size:12px;color:var(--text3);white-space:nowrap; font-family:"Inter",sans-serif;';
+  userInfo.style.cssText = 'font-size:12px;color:var(--text3);white-space:nowrap;';
   userInfo.innerHTML = `Halo, <span style="color:var(--text);font-weight:600;">${_rpUser.username}</span>`;
 
+  // Logout btn
+  const logoutBtn = document.createElement('button');
+  logoutBtn.textContent = 'Logout';
+  logoutBtn.style.cssText = `
+    background:rgba(255,0,0,0.08);color:#e06060;
+    border:1px solid rgba(255,0,0,0.2);
+    padding:5px 10px;border-radius:8px;
+    cursor:pointer;font-size:11px;font-weight:600;
+    font-family:'Inter',sans-serif;
+  `;
+  logoutBtn.onclick = () => { clearSession(); window.location.href = 'auth.html'; };
 
-  // Tombol Burger
-  const burgerBtn = document.createElement('button');
-  burgerBtn.className = 'burger-btn';
-  burgerBtn.innerHTML = '☰'; // Ikon Hamburger
-  burgerBtn.onclick = (e) => {
-    e.stopPropagation(); // Biar menunya nggak langsung nutup pas diklik
-    navGroup.classList.toggle('show');
-  };
-
-  // Masukin elemen ke navGroup
-  navGroup.appendChild(userInfo);
-  navGroup.appendChild(backBtn);
-  navGroup.appendChild(logoutBtn);
-
-  // Cari tombol tema bawaan
-  const themeBtn = document.getElementById('btn-theme');
-  
-  // Susun urutannya: [Isi Menu] -> [Tombol Tema] -> [Tombol Burger]
-  if (themeBtn) {
-    headerRight.insertBefore(navGroup, themeBtn);
-  } else {
-    headerRight.appendChild(navGroup);
-  }
-  headerRight.appendChild(burgerBtn);
-
-  // Tutup menu otomatis kalau user nge-klik di luar area kotak menu
-  document.addEventListener('click', (e) => {
-    if (!navGroup.contains(e.target) && !burgerBtn.contains(e.target)) {
-      navGroup.classList.remove('show');
-    }
-  });
+  // Insert sebelum elemen pertama header-right (btn-theme)
+  const firstChild = headerRight.firstChild;
+  headerRight.insertBefore(backBtn, firstChild);
+  headerRight.insertBefore(userInfo, firstChild);
+  headerRight.appendChild(logoutBtn);
 })();
 
-// Fungsi buat ngumpetin pilihan modul dan form input pas program udah jadi
-function _hideModuleSelection() {
-  // 1. Sembunyikan kotak "Pilih Modul" besar di bagian atas
-  const modulSection = document.querySelector('.modul-section');
-  if (modulSection) {
-    modulSection.style.display = 'none';
-  }
-
-  // 2. Sembunyikan tab kecil Road/Trail di dalam kartu hasil program
-  const modulTabsOutput = document.getElementById('modul-tabs-output');
-  if (modulTabsOutput) {
-    modulTabsOutput.style.display = 'none';
-  }
-
-  // 3. Sembunyikan Panel Kiri (Form Profil, Target Race, dll)
-  const panelLeft = document.querySelector('.panel-left');
-  if (panelLeft) {
-    panelLeft.style.display = 'none';
-  }
-
-  // 4. Ubah layout Main biar Panel Kanan (Hasil Program) jadi melar Full Width
-  const mainContainer = document.querySelector('.main');
-  if (mainContainer) {
-    mainContainer.style.display = 'block'; // Matiin grid bawaan yang ngebagi 2 kolom
-  }
-}
 // ── 3. TEMA SYNC ───────────────────────────────────────────
 // Generator punya initTheme sendiri yang sudah baca rp-theme dari localStorage.
 // Tidak perlu override — key yang sama (rp-theme) sudah dipakai index.html.
@@ -204,8 +132,7 @@ if (_urlPlanId) {
 
       // Tunggu sampai DOM + script generator selesai init
       // Pakai requestAnimationFrame dua kali untuk pastikan semua var global sudah ada
-     requestAnimationFrame(() => requestAnimationFrame(() => {
-        _hideModuleSelection(); // <--- TAMBAHKAN INI
+      requestAnimationFrame(() => requestAnimationFrame(() => {
         if (plan.type === 'trail') {
           _loadTrailPlan(plan);
         } else {
@@ -216,24 +143,6 @@ if (_urlPlanId) {
       console.error('Load plan error:', err);
     }
   })();
-} else {
-  // [REVISI FIX] Sapu sisa form, TAPI lindungi mutlak data login & tema!
-  Object.keys(localStorage).forEach(k => {
-    const keyLower = k.toLowerCase();
-    // Kalau nama key-nya ngandung unsur kata di bawah ini, JANGAN dihapus
-    const isSafe = keyLower.includes('theme') || 
-                   keyLower.includes('user') || 
-                   keyLower.includes('auth') || 
-                   keyLower.includes('session') || 
-                   k.startsWith('sb-');
-                   
-    if (!isSafe) {
-      localStorage.removeItem(k); // Hapus sisanya (data form lama dll)
-    }
-  });
-  
-  if (typeof state !== 'undefined') state.generated = false;
-  if (typeof trailState !== 'undefined') trailState.generated = false;
 }
 
 function _loadRoadPlan(plan) {
@@ -286,15 +195,6 @@ function _loadRoadPlan(plan) {
 function _loadTrailPlan(plan) {
   if (typeof trailState === 'undefined') return;
 
-  // 1. Switch ke modul trail DULUAN.
-  // Ini penting karena switchToTrailModul() otomatis baca localStorage
-  // dan akan nimpa state cloud kita kalau dipanggil di akhir.
-  if (typeof switchToTrailModul === 'function') {
-    switchToTrailModul();
-  }
-
-  // 2. BARU kita masukin data asli dari Supabase ke state.
-  // Jadi data dari cloud ini yang menang.
   trailState.name          = plan.race_name     || '';
   trailState.level         = plan.level         || 'trail_pemula';
   trailState.filosofi      = plan.filosofi      || 'jornet';
@@ -303,26 +203,16 @@ function _loadTrailPlan(plan) {
   trailState.raceCOT       = 900;
   trailState.raceName      = plan.race_name     || '';
   trailState.targetMinutes = plan.target_minutes || 600;
-  trailState.raceDate      = plan.race_date     || '';
+  trailState.raceDate      = plan.race_date      || '';
   trailState.program       = plan.program;
   trailState.currentWeek   = plan.current_week  || 0;
   trailState.pausedWeeks   = plan.paused_weeks  || [];
 
-  // 3. Update form input UI di sebelah kiri biar angkanya pas
-  const nameEl = document.getElementById('trail-name');
-  const tHoursEl = document.getElementById('trail-target-hours');
-  if (nameEl && trailState.name) nameEl.value = trailState.name;
-  if (tHoursEl && trailState.targetMinutes) tHoursEl.value = Math.round(trailState.targetMinutes / 60);
-  if (typeof window._setTrailDate === 'function' && trailState.raceDate) {
-    window._setTrailDate(trailState.raceDate);
+  // Switch ke modul trail
+  if (typeof switchToTrailModul === 'function') {
+    switchToTrailModul();
   }
 
-  // 4. Render output paksa ke layar!
-  if (typeof renderTrailOutput === 'function') {
-    renderTrailOutput();
-  }
-
-  // 5. Load data centang selesai/skip
   _loadAndApplySessionLogs(_activePlanId);
 }
 
@@ -345,7 +235,7 @@ function _loadTrailPlan(plan) {
       await new Promise(r => setTimeout(r, 50));
 
       if (typeof state === 'undefined' || !state.generated || !state.program) return;
-      _hideModuleSelection();
+
       try {
         const planData = _buildRoadPlanData();
         if (_activePlanId) {
@@ -380,7 +270,7 @@ function _loadTrailPlan(plan) {
       await new Promise(r => setTimeout(r, 100));
 
       if (typeof trailState === 'undefined' || !trailState.program) return;
-      _hideModuleSelection();
+
       try {
         const planData = _buildTrailPlanData();
         if (_activePlanId) {
@@ -480,16 +370,7 @@ async function _loadAndApplySessionLogs(planId) {
   if (!planId) return;
   try {
     const logs = await getSessionLogs(planId);
-    
-    // [TAMBAHAN FIX] Bersihkan sisa-sisa data dari program lain di localStorage
-    Object.keys(localStorage).forEach(k => {
-      // Hapus semua key yang berhubungan sama status & note biar gak bocor antar program
-      if (k.startsWith('rp-status-') || k.startsWith('rp-note-') || k.startsWith('trail-')) {
-        localStorage.removeItem(k);
-      }
-    });
-
-    // Apply ke localStorage agar UI asli bisa membacanya sesuai program saat ini
+    // Apply ke localStorage agar UI asli bisa membacanya
     Object.entries(logs).forEach(([key, val]) => {
       const [wIdx, dIdx] = key.split('-');
       // Road keys
@@ -590,5 +471,3 @@ function _showSyncToast(msg) {
     toast.style.transform = 'translateX(-50%) translateY(120%)';
   }, 2800);
 }
-
-
