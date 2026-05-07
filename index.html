@@ -940,5 +940,20 @@ loadDashboard();
 
 
 </script>
+
+    <script>
+  // Mendaftarkan Service Worker buat fitur PWA
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(registration => {
+          console.log('Mantap! Service Worker berhasil jalan:', registration.scope);
+        })
+        .catch(error => {
+          console.error('Waduh, Service Worker gagal daftar:', error);
+        });
+    });
+  }
+</script>
 </body>
 </html>
