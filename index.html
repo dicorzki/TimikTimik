@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>RunPlan — Dashboard</title>
+    <title>TimikTimik — Dashboard</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏃</text></svg>">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#FAFAF8" id="meta-theme">
@@ -429,23 +429,30 @@
         }
 
         /* Toast notification */
-        .toast {
+       .toast {
             position: fixed;
-            bottom: 20px;
+            bottom: 30px;
             left: 50%;
-            transform: translateX(-50%) translateY(120%);
+            /* Awalnya ngumpet agak ke bawah, transparan, dan mengecil dikit */
+            transform: translateX(-50%) translateY(20px) scale(0.95);
+            opacity: 0;
+            visibility: hidden;
             background: var(--text);
             color: var(--bg);
             padding: 10px 18px;
             border-radius: 100px;
             font-size: 13px;
             font-weight: 500;
-            z-index: 999;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 9999;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             white-space: nowrap;
         }
 
-        .toast.show { transform: translateX(-50%) translateY(0); }
+        .toast.show { 
+            transform: translateX(-50%) translateY(0) scale(1);
+            opacity: 1; 
+            visibility: visible;
+        }
 
         /* Kalender tab iframe wrapper */
         .kalender-frame {
@@ -468,7 +475,68 @@
         @media (max-width: 360px) {
             .stats-grid { grid-template-columns: repeat(3, 1fr); }
             .stat-card .s-value { font-size: 20px; }
-        }
+        }   
+/* --- CSS FIX ALIGNMENT --- */
+.header-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 54px;
+    padding: 0 16px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.header-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px;
+}
+
+.nav-group {
+    display: flex; /* Munculin lagi buat desktop */
+    align-items: center;
+    gap: 12px;
+}
+
+.burger-btn {
+    display: none !important; /* <--- INI SUDAH BENER */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text);
+    padding: 0;
+    line-height: 1;
+    margin-right: -4px;
+    /* display: flex;  <--- HAPUS ATAU KOMENTARI BARIS INI COK! */
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 720px) {
+    .burger-btn { 
+        display: flex !important; /* BIAR DI HP BARU MUNCUL */
+    }
+    .nav-group {
+        display: none !important;
+        position: absolute;
+        top: 54px;
+        right: 16px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        z-index: 1000;
+        min-width: 150px;
+    }
+    .nav-group.show { display: flex !important; }
+}
+
     </style>
 </head>
 <body>
@@ -476,15 +544,22 @@
 <!-- HEADER -->
 <header class="header">
     <div class="header-inner">
-        <div class="logo">
-            <div class="logo-mark">🏃</div>
-            <div>
-                <div class="logo-text">Run<span>Plan</span></div>
+        <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer; display:flex; align-items:center; gap:10px;">
+            <div class="logo-mark" style="font-size:24px;">🏃</div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+                <div class="logo-text" style="line-height:1.1;">Timik<span>Timik</span></div>
             </div>
         </div>
         <div class="header-right">
-            <button class="btn-theme" id="btn-theme" type="button" title="Toggle Dark Mode">🌙</button>
+            <div class="nav-group" id="nav-group">
+                <div class="user-info" style="font-size:12px; color:var(--text3); font-family:'Inter',sans-serif;">
+                    Halo, <span id="display-username" style="color:var(--text); font-weight:600;"></span>
+                </div>
+                <button onclick="handleLogout()" type="button" style="background:rgba(255,0,0,0.08); color:#e06060; border:1px solid rgba(255,0,0,0.2); padding:6px 12px; border-radius:8px; cursor:pointer; font-size:11px; font-weight:600; font-family:'Inter',sans-serif;">Logout</button>
             </div>
+            <button class="btn-theme" id="btn-theme" type="button" title="Toggle Dark Mode">🌙</button>
+            <button class="burger-btn" id="burger-btn">☰</button>
+        </div>
     </div>
 </header>
 
@@ -602,8 +677,15 @@ const months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov
 const now = new Date();
 document.getElementById('greet-sub').textContent = `${greetWord} · ${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()} · #GrowthEveryday`;
 
-;
-
+// ── LOGOUT ──
+window.handleLogout = function() {
+    const theme = localStorage.getItem('rp-theme');
+    localStorage.clear(); // Hapus total sampe ke akar
+    if (theme) localStorage.setItem('rp-theme', theme); // Balikin tema-nya aja
+    
+    clearSession();
+    window.location.href = 'auth.html';
+};
 // ── DARK MODE ──
 function initTheme() {
     const btn = document.getElementById('btn-theme');
@@ -647,12 +729,23 @@ window.switchTab = function(tab) {
     }
 };
 
-// ── TOAST ──
+// ── TOAST (ANTI NYANGKUT) ──
+let _dashToastTimer = null; // Bikin variabel penyimpan timer
+
 function showToast(msg, duration = 2500) {
     const t = document.getElementById('toast');
+    if (!t) return;
+    
     t.textContent = msg;
     t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), duration);
+    
+    // Hapus timer lama biar gak bentrok dan nutup kecepetan/ngefreeze
+    clearTimeout(_dashToastTimer);
+    
+    // Bikin timer baru buat nutup dengan durasi 2.5 detik
+    _dashToastTimer = setTimeout(() => {
+        t.classList.remove('show');
+    }, duration);
 }
 
 // ── LOAD PLANS ──
@@ -839,6 +932,23 @@ function renderStreak(plans) {
         document.getElementById('streak-title').textContent = `${plans.length} program berjalan`;
         document.getElementById('streak-sub').textContent = 'Buka program di bawah untuk melanjutkan sesi kamu.';
     }
+}
+
+// Letakkan di paling bawah <script type="module">
+const burgerBtn = document.getElementById('burger-btn');
+const navGroup = document.getElementById('nav-group');
+
+if (burgerBtn && navGroup) {
+    burgerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navGroup.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navGroup.contains(e.target) && !burgerBtn.contains(e.target)) {
+            navGroup.classList.remove('show');
+        }
+    });
 }
 
 // ── INIT ──

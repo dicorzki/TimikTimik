@@ -43,6 +43,7 @@
         }
 
         [data-theme="dark"] {
+            color-scheme: dark;
             --bg: #111110;
             --bg2: #1A1A18;
             --bg3: #242422;
@@ -4295,3 +4296,4 @@
     padding: 15px 20px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
+
