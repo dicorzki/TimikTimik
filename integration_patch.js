@@ -103,6 +103,7 @@ if (_urlPlanId) {
       // Tunggu sampai DOM + script generator selesai init
       // Pakai requestAnimationFrame dua kali untuk pastikan semua var global sudah ada
       requestAnimationFrame(() => requestAnimationFrame(() => {
+        _hideModuleSelection();
         if (plan.type === 'trail') {
           _loadTrailPlan(plan);
         } else {
@@ -113,6 +114,24 @@ if (_urlPlanId) {
       console.error('Load plan error:', err);
     }
   })();
+} } else {
+  // [REVISI FIX] Sapu sisa form, TAPI lindungi mutlak data login & tema!
+  Object.keys(localStorage).forEach(k => {
+    const keyLower = k.toLowerCase();
+    // Kalau nama key-nya ngandung unsur kata di bawah ini, JANGAN dihapus
+    const isSafe = keyLower.includes('theme') || 
+                   keyLower.includes('user') || 
+                   keyLower.includes('auth') || 
+                   keyLower.includes('session') || 
+                   k.startsWith('sb-');
+                   
+    if (!isSafe) {
+      localStorage.removeItem(k); // Hapus sisanya (data form lama dll)
+    }
+  });
+  
+  if (typeof state !== 'undefined') state.generated = false;
+  if (typeof trailState !== 'undefined') trailState.generated = false;
 }
 
 function _loadRoadPlan(plan) {
@@ -165,6 +184,15 @@ function _loadRoadPlan(plan) {
 function _loadTrailPlan(plan) {
   if (typeof trailState === 'undefined') return;
 
+  // 1. Switch ke modul trail DULUAN.
+  // Ini penting karena switchToTrailModul() otomatis baca localStorage
+  // dan akan nimpa state cloud kita kalau dipanggil di akhir.
+  if (typeof switchToTrailModul === 'function') {
+    switchToTrailModul();
+  }
+
+  // 2. BARU kita masukin data asli dari Supabase ke state.
+  // Jadi data dari cloud ini yang menang.
   trailState.name          = plan.race_name     || '';
   trailState.level         = plan.level         || 'trail_pemula';
   trailState.filosofi      = plan.filosofi      || 'jornet';
@@ -173,16 +201,26 @@ function _loadTrailPlan(plan) {
   trailState.raceCOT       = 900;
   trailState.raceName      = plan.race_name     || '';
   trailState.targetMinutes = plan.target_minutes || 600;
-  trailState.raceDate      = plan.race_date      || '';
+  trailState.raceDate      = plan.race_date     || '';
   trailState.program       = plan.program;
   trailState.currentWeek   = plan.current_week  || 0;
   trailState.pausedWeeks   = plan.paused_weeks  || [];
 
-  // Switch ke modul trail
-  if (typeof switchToTrailModul === 'function') {
-    switchToTrailModul();
+  // 3. Update form input UI di sebelah kiri biar angkanya pas
+  const nameEl = document.getElementById('trail-name');
+  const tHoursEl = document.getElementById('trail-target-hours');
+  if (nameEl && trailState.name) nameEl.value = trailState.name;
+  if (tHoursEl && trailState.targetMinutes) tHoursEl.value = Math.round(trailState.targetMinutes / 60);
+  if (typeof window._setTrailDate === 'function' && trailState.raceDate) {
+    window._setTrailDate(trailState.raceDate);
   }
 
+  // 4. Render output paksa ke layar!
+  if (typeof renderTrailOutput === 'function') {
+    renderTrailOutput();
+  }
+
+  // 5. Load data centang selesai/skip
   _loadAndApplySessionLogs(_activePlanId);
 }
 
@@ -205,6 +243,8 @@ function _loadTrailPlan(plan) {
       await new Promise(r => setTimeout(r, 50));
 
       if (typeof state === 'undefined' || !state.generated || !state.program) return;
+
+      _hideModuleSelection();
 
       try {
         const planData = _buildRoadPlanData();
@@ -240,6 +280,8 @@ function _loadTrailPlan(plan) {
       await new Promise(r => setTimeout(r, 100));
 
       if (typeof trailState === 'undefined' || !trailState.program) return;
+
+      _hideModuleSelection();
 
       try {
         const planData = _buildTrailPlanData();
@@ -440,4 +482,31 @@ function _showSyncToast(msg) {
   _toastTimer = setTimeout(() => {
     toast.style.transform = 'translateX(-50%) translateY(120%)';
   }, 2800);
+}
+
+// Fungsi buat ngumpetin pilihan modul dan form input pas program udah jadi
+function _hideModuleSelection() {
+  // 1. Sembunyikan kotak "Pilih Modul" besar di bagian atas
+  const modulSection = document.querySelector('.modul-section');
+  if (modulSection) {
+    modulSection.style.display = 'none';
+  }
+
+  // 2. Sembunyikan tab kecil Road/Trail di dalam kartu hasil program
+  const modulTabsOutput = document.getElementById('modul-tabs-output');
+  if (modulTabsOutput) {
+    modulTabsOutput.style.display = 'none';
+  }
+
+  // 3. Sembunyikan Panel Kiri (Form Profil, Target Race, dll)
+  const panelLeft = document.querySelector('.panel-left');
+  if (panelLeft) {
+    panelLeft.style.display = 'none';
+  }
+
+  // 4. Ubah layout Main biar Panel Kanan (Hasil Program) jadi melar Full Width
+  const mainContainer = document.querySelector('.main');
+  if (mainContainer) {
+    mainContainer.style.display = 'block'; // Matiin grid bawaan yang ngebagi 2 kolom
+  }
 }
