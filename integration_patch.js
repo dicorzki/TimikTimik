@@ -38,26 +38,7 @@ if (!_rpUser) {
   const headerRight = document.querySelector('.header-right');
   if (!headerRight) return;
 
-  // Tombol back ke dashboard
-  const backBtn = document.createElement('a');
-  backBtn.href = 'index.html';
-  backBtn.title = 'Kembali ke Dashboard';
-  backBtn.style.cssText = `
-    display:inline-flex;align-items:center;gap:5px;
-    padding:5px 11px;border-radius:100px;
-    border:1.5px solid var(--border2);background:transparent;
-    color:var(--text2);font-size:12px;font-weight:600;
-    font-family:'Inter',sans-serif;text-decoration:none;
-    transition:all .15s;flex-shrink:0;
-  `;
-  backBtn.innerHTML = `
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="19" y1="12" x2="5" y2="12"/>
-      <polyline points="12 19 5 12 12 5"/>
-    </svg>
-    Dashboard
-  `;
+
   backBtn.addEventListener('mouseenter', () => {
     backBtn.style.borderColor = 'var(--accent)';
     backBtn.style.color = 'var(--accent)';
