@@ -11149,38 +11149,6 @@
     },
     {
         "id": "jl_753",
-        "name": "Arutmin Borneo Run",
-        "date": "2026-11-01",
-        "city": "Banjarbaru, Kalimantan Selatan",
-        "province": "Lainnya",
-        "distances": [
-            "5K",
-            "10K",
-            "HM"
-        ],
-        "runType": "ROAD",
-        "regType": "FCFS",
-        "status": "UPCOMING",
-        "registerUrl": "https://jadwallari.id/events/arutmin-borneo-run/"
-    },
-    {
-        "id": "jl_754",
-        "name": "Bank Sumsel Babel Run 2026",
-        "date": "2026-11-01",
-        "city": "Palembang, Sumatra Selatan",
-        "province": "Lainnya",
-        "distances": [
-            "5K",
-            "10K",
-            "HM"
-        ],
-        "runType": "ROAD",
-        "regType": "FCFS",
-        "status": "UPCOMING",
-        "registerUrl": "https://jadwallari.id/events/bank-sumsel-babel-run/"
-    },
-    {
-        "id": "jl_755",
         "name": "Buttonscarves 5K Fun Run 2026",
         "date": "2026-11-01",
         "city": "Jakarta Pusat, DKI Jakarta",
@@ -11194,7 +11162,7 @@
         "registerUrl": "https://jadwallari.id/events/buttonscarves-fun-run/"
     },
     {
-        "id": "jl_756",
+        "id": "jl_754",
         "name": "Depok Kids Run Festival 2026",
         "date": "2026-11-01",
         "city": "Depok, Jawa Barat",
@@ -11209,7 +11177,7 @@
         "registerUrl": "https://jadwallari.id/events/depok-kids-run-festival/"
     },
     {
-        "id": "jl_757",
+        "id": "jl_755",
         "name": "Gunungronggo Trail Run",
         "date": "2026-11-01",
         "city": "Malang, Jawa Timur",
@@ -11224,7 +11192,7 @@
         "registerUrl": "https://jadwallari.id/events/gunungronggo-trail-run/"
     },
     {
-        "id": "jl_758",
+        "id": "jl_756",
         "name": "Jakarta One Running Series: Jakarta Selatan",
         "date": "2026-11-01",
         "city": "Jakarta Selatan, DKI Jakarta",
@@ -11238,7 +11206,7 @@
         "registerUrl": "https://jadwallari.id/events/jakarta-one-running-series-jakarta-selatan/"
     },
     {
-        "id": "jl_759",
+        "id": "jl_757",
         "name": "Jawara Banten Run 5K",
         "date": "2026-11-01",
         "city": "Serang, Banten",
@@ -11252,7 +11220,7 @@
         "registerUrl": "https://jadwallari.id/events/jawara-banten-run/"
     },
     {
-        "id": "jl_760",
+        "id": "jl_758",
         "name": "JUARA RUN 2.0",
         "date": "2026-11-01",
         "city": "Sungai Penuh, Jambi",
@@ -11267,7 +11235,7 @@
         "registerUrl": "https://jadwallari.id/events/juara-run/"
     },
     {
-        "id": "jl_761",
+        "id": "jl_759",
         "name": "Kelud Vertical Challenge 2026",
         "date": "2026-11-01",
         "city": "Kediri, Jawa Timur",
@@ -11282,7 +11250,7 @@
         "registerUrl": "https://jadwallari.id/events/kelud-vertical-challenge/"
     },
     {
-        "id": "jl_762",
+        "id": "jl_760",
         "name": "Kepri Island Run 2026",
         "date": "2026-11-01",
         "city": "Batam, Kepulauan Riau",
@@ -11297,7 +11265,7 @@
         "registerUrl": "https://jadwallari.id/events/kepri-island-run/"
     },
     {
-        "id": "jl_763",
+        "id": "jl_761",
         "name": "LT MEN Power Run 2026 Surabaya",
         "date": "2026-11-01",
         "city": "Surabaya, Jawa Timur",
@@ -11312,7 +11280,7 @@
         "registerUrl": "https://jadwallari.id/events/lt-men-power-run/"
     },
     {
-        "id": "jl_764",
+        "id": "jl_762",
         "name": "Luwes Orange Run 2026 Gentan",
         "date": "2026-11-01",
         "city": "Sukoharjo, Jawa Tengah",
@@ -11326,7 +11294,7 @@
         "registerUrl": "https://jadwallari.id/events/luwes-orange-run-gentan/"
     },
     {
-        "id": "jl_765",
+        "id": "jl_763",
         "name": "Pharmaphoria Fun Run 2026",
         "date": "2026-11-01",
         "city": "Tangerang, Banten",
@@ -11341,7 +11309,7 @@
         "registerUrl": "https://jadwallari.id/events/pharmaphoria/"
     },
     {
-        "id": "jl_766",
+        "id": "jl_764",
         "name": "PLN Mobile Electric 5K Series Bali",
         "date": "2026-11-01",
         "city": "Denpasar, Bali",
@@ -11355,7 +11323,7 @@
         "registerUrl": "https://jadwallari.id/events/pln-mobile-electric-bali/"
     },
     {
-        "id": "jl_767",
+        "id": "jl_765",
         "name": "Reyog Corsa 2026",
         "date": "2026-11-01",
         "city": "Ponorogo,Jawa Timur",
@@ -11370,7 +11338,7 @@
         "registerUrl": "https://jadwallari.id/events/reyog-corsa/"
     },
     {
-        "id": "jl_768",
+        "id": "jl_766",
         "name": "Self-Care AMRUN 5K 2026",
         "date": "2026-11-01",
         "city": "Denpasar, Bali",
@@ -11384,7 +11352,7 @@
         "registerUrl": "https://jadwallari.id/events/self-care-amrun/"
     },
     {
-        "id": "jl_769",
+        "id": "jl_767",
         "name": "Tulungagung 10K",
         "date": "2026-11-01",
         "city": "Tulungagung, Jawa Timur",
@@ -11399,7 +11367,7 @@
         "registerUrl": "https://jadwallari.id/events/tulungagung-10k/"
     },
     {
-        "id": "jl_770",
+        "id": "jl_768",
         "name": "WD Fun Run Series II 2026",
         "date": "2026-11-01",
         "city": "Mojokerto, Jawa Timur",
@@ -11414,7 +11382,7 @@
         "registerUrl": "https://jadwallari.id/events/wd-run/"
     },
     {
-        "id": "jl_771",
+        "id": "jl_769",
         "name": "Xiaomi Pop Run 2026",
         "date": "2026-11-01",
         "city": "Jakarta Timur, DKI Jakarta",
@@ -11428,7 +11396,7 @@
         "registerUrl": "https://jadwallari.id/events/xiaomi-pop-run/"
     },
     {
-        "id": "jl_772",
+        "id": "jl_770",
         "name": "Alix Fun Run 5K 2026",
         "date": "2026-11-07",
         "city": "Bekasi, Jawa Barat",
@@ -11442,7 +11410,7 @@
         "registerUrl": "https://jadwallari.id/events/alix-fun-run/"
     },
     {
-        "id": "jl_773",
+        "id": "jl_771",
         "name": "Jungwok Sunset Run",
         "date": "2026-11-07",
         "city": "Gunungkidul, DI Yogyakarta",
@@ -11456,7 +11424,7 @@
         "registerUrl": "https://jadwallari.id/events/jungwok-sunset-run/"
     },
     {
-        "id": "jl_774",
+        "id": "jl_772",
         "name": "AGRIRUNFEST 2026",
         "date": "2026-11-08",
         "city": "Bogor, Jawa Barat",
@@ -11470,7 +11438,7 @@
         "registerUrl": "https://jadwallari.id/events/agrirunfest/"
     },
     {
-        "id": "jl_775",
+        "id": "jl_773",
         "name": "ASCENT RUN 2026",
         "date": "2026-11-08",
         "city": "Pasuruan, Jawa Timur",
@@ -11485,7 +11453,7 @@
         "registerUrl": "https://jadwallari.id/events/ascent-run/"
     },
     {
-        "id": "jl_776",
+        "id": "jl_774",
         "name": "BALERUN 2026",
         "date": "2026-11-08",
         "city": "Surakarta, Jawa Tengah",
@@ -11500,7 +11468,7 @@
         "registerUrl": "https://jadwallari.id/events/balerun/"
     },
     {
-        "id": "jl_777",
+        "id": "jl_775",
         "name": "Bayrun For Charity 2026",
         "date": "2026-11-08",
         "city": "Jakarta Pusat, DKI Jakarta",
@@ -11516,7 +11484,7 @@
         "registerUrl": "https://jadwallari.id/events/bayrun-for-charity/"
     },
     {
-        "id": "jl_778",
+        "id": "jl_776",
         "name": "Earth Run 2026 Samarinda",
         "date": "2026-11-08",
         "city": "Samarinda, Kalimantan Timur",
@@ -11531,7 +11499,7 @@
         "registerUrl": "https://jadwallari.id/events/earth-run-samarinda/"
     },
     {
-        "id": "jl_779",
+        "id": "jl_777",
         "name": "Hydro Run 2026",
         "date": "2026-11-08",
         "city": "Medan, Sumatra Utara",
@@ -11545,7 +11513,7 @@
         "registerUrl": "https://jadwallari.id/events/hydro-run/"
     },
     {
-        "id": "jl_780",
+        "id": "jl_778",
         "name": "Indofest Fun Trail Running",
         "date": "2026-11-08",
         "city": "Bogor, Jawa Barat",
@@ -11561,7 +11529,7 @@
         "registerUrl": "https://jadwallari.id/events/indofest-fun-trail-running/"
     },
     {
-        "id": "jl_781",
+        "id": "jl_779",
         "name": "INSAN Running Fest 2026",
         "date": "2026-11-08",
         "city": "Magetan, Jawa Timur",
@@ -11575,7 +11543,7 @@
         "registerUrl": "https://jadwallari.id/events/insan-running-fest/"
     },
     {
-        "id": "jl_782",
+        "id": "jl_780",
         "name": "Jujutsu Kaisen Run 2026",
         "date": "2026-11-08",
         "city": "Jakarta Pusat, DKI Jakarta",
@@ -11589,7 +11557,7 @@
         "registerUrl": "https://jadwallari.id/events/jujutsu-kaisen-run/"
     },
     {
-        "id": "jl_783",
+        "id": "jl_781",
         "name": "Lari Ikut Aruss 2026",
         "date": "2026-11-08",
         "city": "Semarang, Jawa Tengah",
@@ -11604,7 +11572,7 @@
         "registerUrl": "https://jadwallari.id/events/lari-ikut-aruss/"
     },
     {
-        "id": "jl_784",
+        "id": "jl_782",
         "name": "Luwes Orange Run 2026 Blora",
         "date": "2026-11-08",
         "city": "Blora, Jawa Tengah",
@@ -11618,7 +11586,7 @@
         "registerUrl": "https://jadwallari.id/events/luwes-orange-run-blora/"
     },
     {
-        "id": "jl_785",
+        "id": "jl_783",
         "name": "Makayoa Fun Run 5K",
         "date": "2026-11-08",
         "city": "Jakarta Pusat, DKI Jakarta",
@@ -11632,7 +11600,7 @@
         "registerUrl": "https://jadwallari.id/events/makayoa-fun-run/"
     },
     {
-        "id": "jl_786",
+        "id": "jl_784",
         "name": "NasDem Run for Change",
         "date": "2026-11-08",
         "city": "Karawang, Jawa Barat",
@@ -11648,7 +11616,7 @@
         "registerUrl": "https://jadwallari.id/events/nasdem-run-for-change/"
     },
     {
-        "id": "jl_787",
+        "id": "jl_785",
         "name": "PGV STEP FOR FUN 2026",
         "date": "2026-11-08",
         "city": "Bogor, Jawa Barat",
@@ -11659,10 +11627,10 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/pgv-step-for-fun/"
     },
     {
-        "id": "jl_788",
+        "id": "jl_786",
         "name": "Pharma Run 2026",
         "date": "2026-11-08",
         "city": "Madiun, Jawa Timur",
@@ -11676,7 +11644,7 @@
         "registerUrl": "https://jadwallari.id/events/pharma-run/"
     },
     {
-        "id": "jl_789",
+        "id": "jl_787",
         "name": "PLN Electric Run 2026",
         "date": "2026-11-08",
         "city": "Tangerang, Banten",
@@ -11692,7 +11660,7 @@
         "registerUrl": "https://jadwallari.id/events/pln-electric-run/"
     },
     {
-        "id": "jl_790",
+        "id": "jl_788",
         "name": "Sari Ater Trail Race 2026",
         "date": "2026-11-08",
         "city": "Subang, Jawa Barat",
@@ -11708,7 +11676,7 @@
         "registerUrl": "https://jadwallari.id/events/sari-ater-trail-race/"
     },
     {
-        "id": "jl_791",
+        "id": "jl_789",
         "name": "Soekarno Run Blitar 2026",
         "date": "2026-11-08",
         "city": "Blitar, Jawa Timur",
@@ -11723,7 +11691,7 @@
         "registerUrl": "https://jadwallari.id/events/soekarno-run-blitar/"
     },
     {
-        "id": "jl_792",
+        "id": "jl_790",
         "name": "Surabaya ITS Run Fest 2026",
         "date": "2026-11-08",
         "city": "Surabaya, Jawa Timur",
@@ -11738,7 +11706,7 @@
         "registerUrl": "https://jadwallari.id/events/surabaya-its-run-fest/"
     },
     {
-        "id": "jl_793",
+        "id": "jl_791",
         "name": "Wakatobi Biosphere Run 2026",
         "date": "2026-11-08",
         "city": "Wakatobi, Sulawesi Tenggara",
@@ -11754,7 +11722,7 @@
         "registerUrl": "https://jadwallari.id/events/wakatobi-biosphere-run/"
     },
     {
-        "id": "jl_794",
+        "id": "jl_792",
         "name": "Yo Run 2026",
         "date": "2026-11-08",
         "city": "Bandung Barat, Jawa Barat",
@@ -11770,7 +11738,7 @@
         "registerUrl": "https://jadwallari.id/events/yorun/"
     },
     {
-        "id": "jl_795",
+        "id": "jl_793",
         "name": "​Woman Warrior Run 2026",
         "date": "2026-11-08",
         "city": "Surabaya, Jawa Timur",
@@ -11786,7 +11754,7 @@
         "registerUrl": "https://jadwallari.id/events/woman-warrior-run/"
     },
     {
-        "id": "jl_796",
+        "id": "jl_794",
         "name": "Lari Lingkar Merapi",
         "date": "2026-11-13",
         "city": "Sleman, DI Yogyakarta",
@@ -11804,7 +11772,7 @@
         "registerUrl": "https://jadwallari.id/events/lari-lingkar-merapi/"
     },
     {
-        "id": "jl_797",
+        "id": "jl_795",
         "name": "BTN Kepri Moonrun 2026",
         "date": "2026-11-14",
         "city": "Tanjung Pinang, Kepulauan Riau",
@@ -11819,7 +11787,7 @@
         "registerUrl": "https://jadwallari.id/events/btn-kepri-moonrun/"
     },
     {
-        "id": "jl_798",
+        "id": "jl_796",
         "name": "Disney Run Jakarta 2026",
         "date": "2026-11-14",
         "city": "Tangerang, Banten",
@@ -11835,7 +11803,7 @@
         "registerUrl": "https://jadwallari.id/events/disney-run-jakarta/"
     },
     {
-        "id": "jl_799",
+        "id": "jl_797",
         "name": "KORPRI BKN Sunset Run 2026",
         "date": "2026-11-14",
         "city": "Jakarta Utara, DKI Jakarta",
@@ -11849,7 +11817,7 @@
         "registerUrl": "https://jadwallari.id/events/korpri-bkn-sunset-run/"
     },
     {
-        "id": "jl_800",
+        "id": "jl_798",
         "name": "Suroboyo Mlayu Bengi",
         "date": "2026-11-14",
         "city": "Surabaya, Jawa Timur",
@@ -11863,7 +11831,7 @@
         "registerUrl": "https://jadwallari.id/events/suroboyo-mlayu-bengi/"
     },
     {
-        "id": "jl_801",
+        "id": "jl_799",
         "name": "Bank Jateng Borobudur Marathon 2026",
         "date": "2026-11-15",
         "city": "Magelang, Jawa Tengah",
@@ -11879,7 +11847,7 @@
         "registerUrl": "https://jadwallari.id/events/borobudur-marathon/"
     },
     {
-        "id": "jl_802",
+        "id": "jl_800",
         "name": "Bener Run",
         "date": "2026-11-15",
         "city": "Batam, Kepulauan Riau",
@@ -11894,7 +11862,7 @@
         "registerUrl": "https://jadwallari.id/events/bener-run/"
     },
     {
-        "id": "jl_803",
+        "id": "jl_801",
         "name": "Dilem Wilis Trenggalek Trail Run 2026",
         "date": "2026-11-15",
         "city": "Trenggalek, Jawa Timur",
@@ -11909,7 +11877,7 @@
         "registerUrl": "https://jadwallari.id/events/dilem-wilis-trenggalek-trail-run/"
     },
     {
-        "id": "jl_804",
+        "id": "jl_802",
         "name": "GEELY Jakarta Vertical Run",
         "date": "2026-11-15",
         "city": "Jakarta Pusat, DKI Jakarta",
@@ -11923,7 +11891,7 @@
         "registerUrl": "https://jadwallari.id/events/geely-jakarta-vertical-run/"
     },
     {
-        "id": "jl_805",
+        "id": "jl_803",
         "name": "GeneRUN 2026: RUN 4 RARE",
         "date": "2026-11-15",
         "city": "Sleman, DI Yogyakarta",
@@ -11939,7 +11907,7 @@
         "registerUrl": "https://jadwallari.id/events/generun/"
     },
     {
-        "id": "jl_806",
+        "id": "jl_804",
         "name": "Guardian Run",
         "date": "2026-11-15",
         "city": "Jakarta Pusat, DKI Jakarta",
@@ -11954,7 +11922,7 @@
         "registerUrl": "https://jadwallari.id/events/guardian-run/"
     },
     {
-        "id": "jl_807",
+        "id": "jl_805",
         "name": "Ikatemi Color Run 2026",
         "date": "2026-11-15",
         "city": "Semarang, Jawa Tengah",
@@ -11968,7 +11936,7 @@
         "registerUrl": "https://jadwallari.id/events/ikatemi-color-run/"
     },
     {
-        "id": "jl_808",
+        "id": "jl_806",
         "name": "Ini Karimun Fun Run 2026",
         "date": "2026-11-15",
         "city": "Karimun, Kepulauan Riau",
@@ -11982,7 +11950,7 @@
         "registerUrl": "https://jadwallari.id/events/ini-karimun-fun-run/"
     },
     {
-        "id": "jl_809",
+        "id": "jl_807",
         "name": "KAUJE Lamongan Fun Run",
         "date": "2026-11-15",
         "city": "Lamongan, Jawa Timur",
@@ -11996,7 +11964,7 @@
         "registerUrl": "https://jadwallari.id/events/kauje-lamongan-fun-run/"
     },
     {
-        "id": "jl_810",
+        "id": "jl_808",
         "name": "KALTIM QRISPERIENCE RUN 2026",
         "date": "2026-11-15",
         "city": "Samarinda, Kalimantan Timur",
@@ -12011,7 +11979,7 @@
         "registerUrl": "https://jadwallari.id/events/kaltim-qrisperience-run/"
     },
     {
-        "id": "jl_811",
+        "id": "jl_809",
         "name": "Kolaka Half Marathon",
         "date": "2026-11-15",
         "city": "Kolaka, Sulawesi Tenggara",
@@ -12027,7 +11995,7 @@
         "registerUrl": "https://jadwallari.id/events/kolaka-half-marathon/"
     },
     {
-        "id": "jl_812",
+        "id": "jl_810",
         "name": "MYZE Run",
         "date": "2026-11-15",
         "city": "Sumenep, Jawa Timur",
@@ -12041,7 +12009,7 @@
         "registerUrl": "https://jadwallari.id/events/myze-run/"
     },
     {
-        "id": "jl_813",
+        "id": "jl_811",
         "name": "NU RUN 2026",
         "date": "2026-11-15",
         "city": "Yogyakarta, DI Yogyakarta",
@@ -12052,10 +12020,10 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/nu-run/"
     },
     {
-        "id": "jl_814",
+        "id": "jl_812",
         "name": "Smartfren Fun Run Padang",
         "date": "2026-11-15",
         "city": "Padang, Sumatera Barat",
@@ -12066,10 +12034,10 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/smartfren-run-padang/"
     },
     {
-        "id": "jl_815",
+        "id": "jl_813",
         "name": "Wizzmie Party Run 5K",
         "date": "2026-11-15",
         "city": "Cirebon, Jawa Barat",
@@ -12080,10 +12048,10 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/wizzmie-party-run/"
     },
     {
-        "id": "jl_816",
+        "id": "jl_814",
         "name": "Groovy Run 2026",
         "date": "2026-11-21",
         "city": "Semarang, Jawa Barat",
@@ -12097,7 +12065,7 @@
         "registerUrl": "https://jadwallari.id/events/groovy-run/"
     },
     {
-        "id": "jl_817",
+        "id": "jl_815",
         "name": "Kediri Night Run 2026",
         "date": "2026-11-21",
         "city": "Kediri, Jawa Timur",
@@ -12112,7 +12080,7 @@
         "registerUrl": "https://jadwallari.id/events/kediri-night-run/"
     },
     {
-        "id": "jl_818",
+        "id": "jl_816",
         "name": "Lembu Suro Trail Run 2026",
         "date": "2026-11-21",
         "city": "Blitar, Jawa Timur",
@@ -12129,7 +12097,7 @@
         "registerUrl": "https://jadwallari.id/events/lembu-suro-trail-run/"
     },
     {
-        "id": "jl_819",
+        "id": "jl_817",
         "name": "Mega Karimunjawa Beach Trail Run #2 2026",
         "date": "2026-11-21",
         "city": "Jepara, Jawa Tengah",
@@ -12144,7 +12112,7 @@
         "registerUrl": "https://jadwallari.id/events/mega-karimunjawa-beach-trail-run/"
     },
     {
-        "id": "jl_820",
+        "id": "jl_818",
         "name": "UB Trail Run",
         "date": "2026-11-21",
         "city": "Malang, Jawa Timur",
@@ -12160,7 +12128,7 @@
         "registerUrl": "https://jadwallari.id/events/ub-trail-run/"
     },
     {
-        "id": "jl_821",
+        "id": "jl_819",
         "name": "Mandiri Bintan Marathon 2026",
         "date": "2026-11-21",
         "city": "Bintan, Kepulauan Riau",
@@ -12178,7 +12146,7 @@
         "registerUrl": "https://jadwallari.id/events/bintan-marathon/"
     },
     {
-        "id": "jl_822",
+        "id": "jl_820",
         "name": "Ubud Running Festival 2026",
         "date": "2026-11-21",
         "city": "Gianyar, Bali",
@@ -12195,7 +12163,7 @@
         "registerUrl": "https://jadwallari.id/events/ubud-running-festival/"
     },
     {
-        "id": "jl_823",
+        "id": "jl_821",
         "name": "Earth Run 2026 Palembang",
         "date": "2026-11-22",
         "city": "Palembang, Sumatra Selatan",
@@ -12210,7 +12178,7 @@
         "registerUrl": "https://jadwallari.id/events/earth-run-palembang/"
     },
     {
-        "id": "jl_824",
+        "id": "jl_822",
         "name": "Indomaret Run 2026",
         "date": "2026-11-22",
         "city": "Tangerang, Banten",
@@ -12226,7 +12194,7 @@
         "registerUrl": "https://jadwallari.id/events/indomaret-run/"
     },
     {
-        "id": "jl_825",
+        "id": "jl_823",
         "name": "KEKL Fun Run 2026",
         "date": "2026-11-22",
         "city": "Semarang, Jawa Tengah",
@@ -12241,7 +12209,7 @@
         "registerUrl": "https://jadwallari.id/events/kekl-fun-run/"
     },
     {
-        "id": "jl_826",
+        "id": "jl_824",
         "name": "L3B Unpad 2026",
         "date": "2026-11-22",
         "city": "Sumedang, Jawa Barat",
@@ -12257,7 +12225,7 @@
         "registerUrl": "https://jadwallari.id/events/l3b-unpad/"
     },
     {
-        "id": "jl_827",
+        "id": "jl_825",
         "name": "Macan Tutul Fun Run",
         "date": "2026-11-22",
         "city": "Ponorogo, Jawa Timur",
@@ -12271,7 +12239,7 @@
         "registerUrl": "https://jadwallari.id/events/macan-tutul-fun-run/"
     },
     {
-        "id": "jl_828",
+        "id": "jl_826",
         "name": "Majesty Track Race",
         "date": "2026-11-22",
         "city": "Madiun, Jawa Timur",
@@ -12286,7 +12254,7 @@
         "registerUrl": "https://jadwallari.id/events/majesty-track-race/"
     },
     {
-        "id": "jl_829",
+        "id": "jl_827",
         "name": "Olymrun Makassar 2026",
         "date": "2026-11-22",
         "city": "Makassar, Sulawesi Selatan",
@@ -12301,7 +12269,7 @@
         "registerUrl": "https://jadwallari.id/events/olymrun/"
     },
     {
-        "id": "jl_830",
+        "id": "jl_828",
         "name": "Padang City Trail 2026",
         "date": "2026-11-22",
         "city": "Padang, Sumatra Barat",
@@ -12317,7 +12285,21 @@
         "registerUrl": "https://jadwallari.id/events/padang-city-trail/"
     },
     {
-        "id": "jl_831",
+        "id": "jl_829",
+        "name": "Smartfren Fun Run 2026 Batam",
+        "date": "2026-11-22",
+        "city": "Batam, Kepulauan Riau",
+        "province": "Lainnya",
+        "distances": [
+            "5K"
+        ],
+        "runType": "ROAD",
+        "regType": "FCFS",
+        "status": "UPCOMING",
+        "registerUrl": "https://jadwallari.id/events/smartfren-run-batam/"
+    },
+    {
+        "id": "jl_830",
         "name": "Summarecon Bandung Run Fest",
         "date": "2026-11-22",
         "city": "Bandung, Jawa Barat",
@@ -12334,7 +12316,7 @@
         "registerUrl": "https://jadwallari.id/events/summarecon-bandung-run-fest/"
     },
     {
-        "id": "jl_832",
+        "id": "jl_831",
         "name": "Tahura Banten Trail Run 2026",
         "date": "2026-11-22",
         "city": "Pandeglang, Banten",
@@ -12350,6 +12332,21 @@
         "registerUrl": "https://jadwallari.id/events/tahura-banten-trail-run/"
     },
     {
+        "id": "jl_832",
+        "name": "Bhinneka Pahlawan Run 2026",
+        "date": "2026-11-28",
+        "city": "Bogor, Jawa Barat",
+        "province": "Jawa Barat",
+        "distances": [
+            "Kid Dash",
+            "5K"
+        ],
+        "runType": "ROAD",
+        "regType": "FCFS",
+        "status": "UPCOMING",
+        "registerUrl": "https://jadwallari.id/events/bhinneka-pahlawan-run/"
+    },
+    {
         "id": "jl_833",
         "name": "Smartfren Fun Run Kupang",
         "date": "2026-11-28",
@@ -12361,7 +12358,7 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/smartfren-run-kupang/"
     },
     {
         "id": "jl_834",
@@ -12407,7 +12404,7 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/bangor-run-surabaya/"
     },
     {
         "id": "jl_837",
@@ -12451,10 +12448,24 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/hkn-run/"
     },
     {
         "id": "jl_840",
+        "name": "KAI Pesta LeLARIan Cirebon 2026",
+        "date": "2026-11-29",
+        "city": "Cirebon, Jawa Barat",
+        "province": "Lainnya",
+        "distances": [
+            "5K"
+        ],
+        "runType": "ROAD",
+        "regType": "FCFS",
+        "status": "UPCOMING",
+        "registerUrl": "https://jadwallari.id/events/kai-pesta-lelarian-cirebon/"
+    },
+    {
+        "id": "jl_841",
         "name": "Kala 10K Pemalang",
         "date": "2026-11-29",
         "city": "Pemalang, Jawa Tengah",
@@ -12469,7 +12480,7 @@
         "registerUrl": "https://jadwallari.id/events/kala-10k-pemalang/"
     },
     {
-        "id": "jl_841",
+        "id": "jl_842",
         "name": "Kulon Progo Half Marathon 2026",
         "date": "2026-11-29",
         "city": "Kulon Progo, DI Yogyakarta",
@@ -12486,7 +12497,7 @@
         "registerUrl": "https://jadwallari.id/events/kulon-progo-half-marathon/"
     },
     {
-        "id": "jl_842",
+        "id": "jl_843",
         "name": "PGRI Run & Fun Walk 2026",
         "date": "2026-11-29",
         "city": "Bandung, Jawa Barat",
@@ -12501,7 +12512,7 @@
         "registerUrl": "https://jadwallari.id/events/pgri-run-and-fun-walk/"
     },
     {
-        "id": "jl_843",
+        "id": "jl_844",
         "name": "Prambanan Heritage Run 2026",
         "date": "2026-11-29",
         "city": "Sleman, DI Yogyakarta",
@@ -12515,7 +12526,7 @@
         "registerUrl": "https://jadwallari.id/events/prambanan-heritage-run/"
     },
     {
-        "id": "jl_844",
+        "id": "jl_845",
         "name": "PWI HALF MARATHON 2026",
         "date": "2026-11-29",
         "city": "Bandar Lampung, Lampung",
@@ -12531,7 +12542,7 @@
         "registerUrl": "https://jadwallari.id/events/pwi-half-marathon/"
     },
     {
-        "id": "jl_845",
+        "id": "jl_846",
         "name": "UNEJ Law Run 2026",
         "date": "2026-11-29",
         "city": "Jember, Jawa Timur",
@@ -12545,7 +12556,7 @@
         "registerUrl": "https://jadwallari.id/events/unej-law-run/"
     },
     {
-        "id": "jl_846",
+        "id": "jl_847",
         "name": "WAQF RUN 2026",
         "date": "2026-11-29",
         "city": "Jakarta Timur, DKI Jakarta",
@@ -12559,7 +12570,7 @@
         "registerUrl": "https://jadwallari.id/events/waqf-run/"
     },
     {
-        "id": "jl_847",
+        "id": "jl_848",
         "name": "GP100 2026",
         "date": "2026-12-04",
         "city": "Cianjur, Jawa Barat",
@@ -12578,7 +12589,7 @@
         "registerUrl": "https://jadwallari.id/events/gp100/"
     },
     {
-        "id": "jl_848",
+        "id": "jl_849",
         "name": "SIKSOROGO LAWU ULTRA 2026",
         "date": "2026-12-04",
         "city": "Karanganyar, Jawa Tengah",
@@ -12597,7 +12608,7 @@
         "registerUrl": "https://jadwallari.id/events/siksorogo-lawu-ultra/"
     },
     {
-        "id": "jl_849",
+        "id": "jl_850",
         "name": "Afterglow Run & Fest",
         "date": "2026-12-05",
         "city": "Jakarta Selatan, DKI Jakarta",
@@ -12611,7 +12622,7 @@
         "registerUrl": "https://jadwallari.id/events/afterglow-run-and-fest/"
     },
     {
-        "id": "jl_850",
+        "id": "jl_851",
         "name": "NusantaRun 14",
         "date": "2026-12-05",
         "city": "Denpasar - Karangasem, Bali",
@@ -12626,7 +12637,23 @@
         "registerUrl": "https://jadwallari.id/events/nusantarun/"
     },
     {
-        "id": "jl_851",
+        "id": "jl_852",
+        "name": "Bank Sumsel Babel Run 2026",
+        "date": "2026-12-06",
+        "city": "Palembang, Sumatra Selatan",
+        "province": "Lainnya",
+        "distances": [
+            "5K",
+            "10K",
+            "HM"
+        ],
+        "runType": "ROAD",
+        "regType": "FCFS",
+        "status": "UPCOMING",
+        "registerUrl": "https://jadwallari.id/events/bank-sumsel-babel-run/"
+    },
+    {
+        "id": "jl_853",
         "name": "BCA CitraLand Marathon 2026",
         "date": "2026-12-06",
         "city": "Surabaya, Jawa Timur",
@@ -12644,7 +12671,7 @@
         "registerUrl": "https://jadwallari.id/events/citraland-marathon/"
     },
     {
-        "id": "jl_852",
+        "id": "jl_854",
         "name": "Garuda Eco Running Festival 2026",
         "date": "2026-12-06",
         "city": "Jakarta Timur, DKI Jakarta",
@@ -12659,7 +12686,7 @@
         "registerUrl": "https://jadwallari.id/events/garuda-eco-running-festival/"
     },
     {
-        "id": "jl_853",
+        "id": "jl_855",
         "name": "Indo Marines Run 2026",
         "date": "2026-12-06",
         "city": "Batam, Kepulauan Riau",
@@ -12673,7 +12700,7 @@
         "registerUrl": "https://jadwallari.id/events/indo-marines-run/"
     },
     {
-        "id": "jl_854",
+        "id": "jl_856",
         "name": "Industropolis Run 2026",
         "date": "2026-12-06",
         "city": "Batang, Jawa Tengah",
@@ -12689,7 +12716,7 @@
         "registerUrl": "https://jadwallari.id/events/industropolis-run/"
     },
     {
-        "id": "jl_855",
+        "id": "jl_857",
         "name": "Pertamina Eco RunFest 2026",
         "date": "2026-12-06",
         "city": "Jakarta Pusat, DKI Jakarta",
@@ -12706,7 +12733,7 @@
         "registerUrl": "https://jadwallari.id/events/pertamina-eco-runfest/"
     },
     {
-        "id": "jl_856",
+        "id": "jl_858",
         "name": "Siak Half Marathon 2026",
         "date": "2026-12-06",
         "city": "Siak, Riau",
@@ -12722,21 +12749,7 @@
         "registerUrl": "https://jadwallari.id/events/siak-half-marathon/"
     },
     {
-        "id": "jl_857",
-        "name": "Smartfren Fun Run 2026 Batam",
-        "date": "2026-12-06",
-        "city": "Batam, Kepulauan Riau",
-        "province": "Lainnya",
-        "distances": [
-            "5K"
-        ],
-        "runType": "ROAD",
-        "regType": "FCFS",
-        "status": "UPCOMING",
-        "registerUrl": "https://jadwallari.id/events/smartfren-run-batam/"
-    },
-    {
-        "id": "jl_858",
+        "id": "jl_859",
         "name": "Bali Coast Trail 2026",
         "date": "2026-12-01",
         "city": "Karangasem, Bali",
@@ -12753,7 +12766,7 @@
         "registerUrl": "https://jadwallari.id/events/bali-coast-trail/"
     },
     {
-        "id": "jl_859",
+        "id": "jl_860",
         "name": "Batam Night Run Vol. 3",
         "date": "2026-12-12",
         "city": "Batam, Kepulauan Riau",
@@ -12767,7 +12780,7 @@
         "registerUrl": "https://jadwallari.id/events/batam-night-run/"
     },
     {
-        "id": "jl_860",
+        "id": "jl_861",
         "name": "KS Fun Run 2026",
         "date": "2026-12-12",
         "city": "Bandung, Jawa Barat",
@@ -12781,7 +12794,7 @@
         "registerUrl": "https://jadwallari.id/events/ks-fun-run/"
     },
     {
-        "id": "jl_861",
+        "id": "jl_862",
         "name": "Sangiang Bedil Sunset Run & Festival",
         "date": "2026-12-12",
         "city": "Sumedang, Jawa Barat",
@@ -12797,7 +12810,7 @@
         "registerUrl": "https://jadwallari.id/events/sangiang-bedil-sunset-run-and-festival/"
     },
     {
-        "id": "jl_862",
+        "id": "jl_863",
         "name": "Air Force Run 2026",
         "date": "2026-12-13",
         "city": "Jakarta Timur, DKI Jakarta",
@@ -12813,7 +12826,7 @@
         "registerUrl": "https://jadwallari.id/events/air-force-run/"
     },
     {
-        "id": "jl_863",
+        "id": "jl_864",
         "name": "BWS10K: Bondowoso Green Run 2026",
         "date": "2026-12-13",
         "city": "Bondowoso, Jawa Timur",
@@ -12829,7 +12842,7 @@
         "registerUrl": "https://jadwallari.id/events/bws10k/"
     },
     {
-        "id": "jl_864",
+        "id": "jl_865",
         "name": "GOGO RUN 2026",
         "date": "2026-12-13",
         "city": "Batam, Kepulauan Riau",
@@ -12843,7 +12856,7 @@
         "registerUrl": "https://jadwallari.id/events/gogo-run/"
     },
     {
-        "id": "jl_865",
+        "id": "jl_866",
         "name": "JURASIK 2026",
         "date": "2026-12-13",
         "city": "Cianjur, Jawa Barat",
@@ -12855,11 +12868,11 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/jurasik/"
     },
     {
-        "id": "jl_866",
-        "name": "Kahf Wardah Running Fest",
+        "id": "jl_867",
+        "name": "Kahf x Wardah Running Fest",
         "date": "2026-12-13",
         "city": "Kediri, Jawa Timur",
         "province": "Jawa Timur",
@@ -12869,16 +12882,16 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/kahf-wardah-running-fest/"
     },
     {
-        "id": "jl_867",
+        "id": "jl_868",
         "name": "Metland Run for Fun Series 6",
         "date": "2026-12-13",
         "city": "Bekasi, Jawa Barat",
         "province": "Jawa Barat",
         "distances": [
-            "5K"
+            "7K"
         ],
         "runType": "ROAD",
         "regType": "FCFS",
@@ -12886,7 +12899,7 @@
         "registerUrl": "https://jadwallari.id/events/metland-run-for-fun-series/"
     },
     {
-        "id": "jl_868",
+        "id": "jl_869",
         "name": "Reny Run for Good",
         "date": "2026-12-13",
         "city": "Surabaya, Jawa Timur",
@@ -12897,10 +12910,10 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/reny-run-for-good/"
     },
     {
-        "id": "jl_869",
+        "id": "jl_870",
         "name": "Run For Humanity Tangsel 2026",
         "date": "2026-12-13",
         "city": "Tangerang Selatan, Banten",
@@ -12915,7 +12928,7 @@
         "registerUrl": "https://jadwallari.id/events/tangsel-run-for-humanity/"
     },
     {
-        "id": "jl_870",
+        "id": "jl_871",
         "name": "​SedulurRun 2026",
         "date": "2026-12-13",
         "city": "Surabaya, Jawa Timur",
@@ -12931,7 +12944,7 @@
         "registerUrl": "https://jadwallari.id/events/sedulurrun/"
     },
     {
-        "id": "jl_871",
+        "id": "jl_872",
         "name": "Semarang 10K",
         "date": "2026-12-13",
         "city": "Semarang, Jawa Tengah",
@@ -12945,7 +12958,7 @@
         "registerUrl": "https://jadwallari.id/events/semarang-10k/"
     },
     {
-        "id": "jl_872",
+        "id": "jl_873",
         "name": "Summit of Valor",
         "date": "2026-12-13",
         "city": "Batu, Jawa Timur",
@@ -12960,7 +12973,7 @@
         "registerUrl": "https://jadwallari.id/events/kebumen-half-marathon/"
     },
     {
-        "id": "jl_873",
+        "id": "jl_874",
         "name": "Tribuana Fest Run x Fontana Scent Run 2026",
         "date": "2026-12-19",
         "city": "Mojokerto, Jawa Timur",
@@ -12973,10 +12986,10 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/tribuana-fest-run/"
     },
     {
-        "id": "jl_874",
+        "id": "jl_875",
         "name": "Gunung Kawi Ridge Run (GKRR)",
         "date": "2026-12-20",
         "city": "Malang, Jawa Timur",
@@ -12993,7 +13006,7 @@
         "registerUrl": "https://jadwallari.id/events/gunung-kawi-ridge-run/"
     },
     {
-        "id": "jl_875",
+        "id": "jl_876",
         "name": "Kebumen Half Marathon 2026",
         "date": "2026-12-20",
         "city": "Kebumen, Jawa Tengah",
@@ -13009,7 +13022,7 @@
         "registerUrl": "https://jadwallari.id/events/kebumen-half-marathon/"
     },
     {
-        "id": "jl_876",
+        "id": "jl_877",
         "name": "Lake Toba Cross Island Run 2026",
         "date": "2026-12-20",
         "city": "Simalungun, Sumatera Utara",
@@ -13026,7 +13039,7 @@
         "registerUrl": "https://jadwallari.id/events/lake-toba-cross-island-run/"
     },
     {
-        "id": "jl_877",
+        "id": "jl_878",
         "name": "Pine Run 2026",
         "date": "2026-12-20",
         "city": "Bandung Barat, Jawa Barat",
@@ -13041,7 +13054,7 @@
         "registerUrl": "https://jadwallari.id/events/pine-run/"
     },
     {
-        "id": "jl_878",
+        "id": "jl_879",
         "name": "TMD Run 2026",
         "date": "2026-12-20",
         "city": "Denpasar, Bali",
@@ -13055,7 +13068,7 @@
         "registerUrl": "https://jadwallari.id/events/tmd-run/"
     },
     {
-        "id": "jl_879",
+        "id": "jl_880",
         "name": "Eduversal Charity Virtual Run & Ride (EDURUN 2027)",
         "date": "2027-01-27",
         "city": "Anywhere",
@@ -13070,7 +13083,7 @@
         "registerUrl": "https://jadwallari.id/events/edurun-virtual-run-and-ride/"
     },
     {
-        "id": "jl_880",
+        "id": "jl_881",
         "name": "NLC Borobudur 10K",
         "date": "2027-01-03",
         "city": "Magelang, Jawa Tengah",
@@ -13086,7 +13099,7 @@
         "registerUrl": "https://jadwallari.id/events/nlc-borobudur-10k/"
     },
     {
-        "id": "jl_881",
+        "id": "jl_882",
         "name": "Lintas Sentul Trail Run 2027",
         "date": "2027-01-16",
         "city": "Bogor, Jawa Barat",
@@ -13103,7 +13116,7 @@
         "registerUrl": "https://jadwallari.id/events/lintas-sentul-trail-run/"
     },
     {
-        "id": "jl_882",
+        "id": "jl_883",
         "name": "Ciletuh Geopark Run 2027",
         "date": "2027-01-17",
         "city": "Sukabumi, Jawa Barat",
@@ -13119,7 +13132,7 @@
         "registerUrl": "https://jadwallari.id/events/ciletuh-geopark-run/"
     },
     {
-        "id": "jl_883",
+        "id": "jl_884",
         "name": "eLBe Run 2027",
         "date": "2027-01-17",
         "city": "Cilacap, Jawa Tengah",
@@ -13131,10 +13144,10 @@
         "runType": "ROAD",
         "regType": "FCFS",
         "status": "UPCOMING",
-        "registerUrl": "#"
+        "registerUrl": "https://jadwallari.id/events/elbe-run/"
     },
     {
-        "id": "jl_884",
+        "id": "jl_885",
         "name": "Gajah Run 2027",
         "date": "2027-01-17",
         "city": "Surabaya, Jawa Timur",
@@ -13150,7 +13163,7 @@
         "registerUrl": "https://jadwallari.id/events/gajah-run/"
     },
     {
-        "id": "jl_885",
+        "id": "jl_886",
         "name": "HOKIBANK Run 2027",
         "date": "2027-01-17",
         "city": "Denpasar, Bali",
@@ -13165,7 +13178,7 @@
         "registerUrl": "https://jadwallari.id/events/hokibank-run/"
     },
     {
-        "id": "jl_886",
+        "id": "jl_887",
         "name": "Jakarta One Running Series: Jakarta Utara",
         "date": "2027-01-17",
         "city": "Jakarta Utara, DKI Jakarta",
@@ -13179,7 +13192,21 @@
         "registerUrl": "https://jadwallari.id/events/jakarta-one-running-series-jakarta-utara/"
     },
     {
-        "id": "jl_887",
+        "id": "jl_888",
+        "name": "Tak Sabar Run 2027",
+        "date": "2027-01-17",
+        "city": "Batam, Kepulauan Riau",
+        "province": "Lainnya",
+        "distances": [
+            "7.5K"
+        ],
+        "runType": "ROAD",
+        "regType": "FCFS",
+        "status": "UPCOMING",
+        "registerUrl": "https://jadwallari.id/events/tak-sabar-run/"
+    },
+    {
+        "id": "jl_889",
         "name": "Batam Fun Run 7.8K",
         "date": "2027-01-23",
         "city": "Batam, Kepulauan Riau",
@@ -13193,7 +13220,23 @@
         "registerUrl": "https://jadwallari.id/events/batam-fun-run/"
     },
     {
-        "id": "jl_888",
+        "id": "jl_890",
+        "name": "Arutmin Borneo Run",
+        "date": "2027-01-24",
+        "city": "Banjarbaru, Kalimantan Selatan",
+        "province": "Lainnya",
+        "distances": [
+            "5K",
+            "10K",
+            "HM"
+        ],
+        "runType": "ROAD",
+        "regType": "FCFS",
+        "status": "UPCOMING",
+        "registerUrl": "https://jadwallari.id/events/arutmin-borneo-run/"
+    },
+    {
+        "id": "jl_891",
         "name": "EMBA JETBUS Run Malang 10K",
         "date": "2027-01-24",
         "city": "Malang, Jawa Timur",
@@ -13208,7 +13251,7 @@
         "registerUrl": "https://jadwallari.id/events/malang-run/"
     },
     {
-        "id": "jl_889",
+        "id": "jl_892",
         "name": "City by Cities",
         "date": "2027-01-31",
         "city": "Semarang, Jawa Tengah",
@@ -13223,7 +13266,7 @@
         "registerUrl": "https://jadwallari.id/events/city-by-cities/"
     },
     {
-        "id": "jl_890",
+        "id": "jl_893",
         "name": "Pontianak City Run 2027",
         "date": "2027-01-31",
         "city": "Pontianak, Kalimantan Barat",
@@ -13240,7 +13283,7 @@
         "registerUrl": "https://jadwallari.id/events/pontianak-city-run/"
     },
     {
-        "id": "jl_891",
+        "id": "jl_894",
         "name": "Sincia Run 2027",
         "date": "2027-01-31",
         "city": "Surabaya, Jawa Timur",
@@ -13255,7 +13298,7 @@
         "registerUrl": "https://jadwallari.id/events/sincia-run/"
     },
     {
-        "id": "jl_892",
+        "id": "jl_895",
         "name": "Sanur Bali International Half Marathon 2027",
         "date": "2027-02-07",
         "city": "Denpasar, Bali",
@@ -13271,7 +13314,7 @@
         "registerUrl": "https://jadwallari.id/events/sanur-bali-half-marathon/"
     },
     {
-        "id": "jl_893",
+        "id": "jl_896",
         "name": "Jakarta One Running Series: Jakarta Barat",
         "date": "2027-03-21",
         "city": "Jakarta Barat, DKI Jakarta",
@@ -13285,7 +13328,7 @@
         "registerUrl": "https://jadwallari.id/events/jakarta-one-running-series-jakarta-barat/"
     },
     {
-        "id": "jl_894",
+        "id": "jl_897",
         "name": "Forest Adventure Trail #3 2027",
         "date": "2027-04-04",
         "city": "Karanganyar, Jawa Tengah",
@@ -13302,7 +13345,7 @@
         "registerUrl": "https://jadwallari.id/events/forest-adventure-trail/"
     },
     {
-        "id": "jl_895",
+        "id": "jl_898",
         "name": "Jakarta One Running Series: Jakarta Timur",
         "date": "2027-04-25",
         "city": "Jakarta Timur, DKI Jakarta",
@@ -13316,7 +13359,7 @@
         "registerUrl": "https://jadwallari.id/events/jakarta-one-running-series-jakarta-timur/"
     },
     {
-        "id": "jl_896",
+        "id": "jl_899",
         "name": "Jakarta One Running Series: Jakarta Pusat",
         "date": "2027-06-06",
         "city": "Jakarta Pusat, DKI Jakarta",
